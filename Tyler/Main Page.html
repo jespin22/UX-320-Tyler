@@ -1,18 +1,86 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Hobbies</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CTRL: The Experience</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #101010;
+                color: white;
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
+            .container {
+                width: 100%;
+                max-width: 1440px;
+                margin: auto;
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 50px;
+                text-transform: uppercase;
+            }
+            .highlight {
+                color: #3A99E6;
+            }
+            .slideshow-container {
+                position: relative;
+                width: 80%;
+                max-width: 600px;
+                margin: auto;
+                overflow: hidden;
+            }
+            .slides {
+                display: flex;
+                transition: transform 1s ease-in-out;
+            }
+            .slide {
+                min-width: 100%;
+            }
+            .slide img {
+                width: 100%;
+                border-radius: 50%;
+                background-color: gray;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 200px;
+            }
+            .slide img::before {
+                content: "Placeholder Image";
+                color: white;
+                font-size: 16px;
+            }
+            .steps {
+                margin-top: 50px;
+            }
+            .step {
+                font-size: 20px;
+                margin: 20px 0;
+            }
+            .cta-button {
+                background-color: orange;
+                color: black;
+                padding: 15px 30px;
+                font-size: 18px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+        </style>
     </head>
     <body>
-
-       
-       <h1>My hobbies</h1>
-       <p>Some of my favorite Hobbbies are:</p>
-       
+        <div class="container">
+            <div class="header">
+                <h1>CTRL: The</h1>
+                <h1> <span class="highlight">SZA</span></h1> 
+                <h1>Experience</h1>
+            </div>
+            <button class="cta-button">Build The Experience</button>
+            <p>Choose your artist and take control of their performance.</p>
        <img src = "Images/puppy.jpg" width= "200px" height="200px" alt = "puppy">
-       <p>caving can be fun but aslo dagerous so some of the things I would recommend to bring in order of importance are the fallowing:</p>
-<ol>Helment</ol>
-       
-
     </body>
 </html>
