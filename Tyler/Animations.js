@@ -8,7 +8,7 @@ function addSong() {
     let songInput = document.getElementById("song-input"); // Get input field
     let setlistContainer = document.getElementById("setlist"); // Get setlist container
 
-    // Debugging: Check if elements exist
+    //  Check if elements exist
     if (!songInput || !setlistContainer) {
         console.error("Error: Input field or setlist container not found.");
         return;
@@ -16,7 +16,7 @@ function addSong() {
 
     let song = songInput.value.trim(); // Trim input to remove unnecessary spaces
 
-    // Debugging: Check if input is empty
+    // Check if input is empty
     console.log("Adding song:", song);
 
     if (song) {
@@ -29,7 +29,7 @@ function addSong() {
 }
 
 /**
- * Function to display the setlist on the page
+ * Function to display the setlist 
  */
 function displaySetlist() {
     let setlistContainer = document.getElementById("setlist"); // Get the setlist container
@@ -37,7 +37,7 @@ function displaySetlist() {
     // Clear previous content
     setlistContainer.innerHTML = "";
 
-    // If the setlist is empty, show the placeholder text
+    //  placeholder text
     if (setlist.length === 0) {
         setlistContainer.innerHTML = "<p><em>Your setlist will appear here...</em></p>";
         return;
@@ -50,7 +50,7 @@ function displaySetlist() {
         setlistContainer.appendChild(songItem); // Append to the setlist container
     });
 
-    // Debugging: Confirm setlist was updated
+    // Confirm setlist was updated
     console.log("Updated Setlist:", setlist);
 }
 
