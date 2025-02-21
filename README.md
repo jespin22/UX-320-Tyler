@@ -25,6 +25,8 @@ File order:
 6. Style the Stage
 7. Your Show is Ready
 
+Specific Instructions:
+
 ## Libraries Used
 Swiper - for carousel
 https://swiperjs.com/get-started
