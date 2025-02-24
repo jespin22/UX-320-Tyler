@@ -13,6 +13,8 @@ Josseline Espinoza
 CTRL: The Experience is an interactive journey into stage design, music, and fashion. Inspired by the creative minds behind live performances, this tool lets you step into the role of a stage director. Whether you're a concert enthusiast, a fashion-forward music fan, or an aspiring stage designer, this is your chance to craft a show like never before.
 
 Main Features:
+- Hand-selecting your own music from an artist's discography
+- Mix and match clothes and accessories
 - 
 
 ## How-To Use
