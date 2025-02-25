@@ -1,52 +1,81 @@
-/* Cuarte the set list styles*/
+/* Import custom font */
+@font-face {
+    font-family: 'AnzaHeader';
+    src: url('Fonts/Anza-header.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Overall page */
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4e04d;
+    background-color: #FFD400;
+    color: #FF3B30;
     text-align: center;
 }
 
-.setlist-container {
-    width: 60%;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+/* Navigation bar - bg */
+header {
+    background-color: black;
+    padding: 15px 20px;
 }
 
-.song-list {
-    background: #d3d3d3;
-    padding: 10px;
-    min-height: 150px;
-    border-radius: 5px;
-    text-align: left;
-    margin-bottom: 15px;
+/* Navigation bar - spacing */
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-input, button {
-    padding: 10px;
-    margin: 5px;
-    font-size: 14px;
-}
-
-.btn {
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.add-btn {
-    background-color: #d3d3d3;
-}
-
-.back-btn {
-    border: 2px solid red;
-    background: none;
-    color: red;
-}
-
-.next-btn {
-    background-color: red;
+/* Navigation bar - font */
+.nav-item {
     color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 20px; /* Spacing between items */
+}
+
+/* Logo - size */
+.logo {
+    width: 30px; 
+    height: 30px;
+}
+
+/* Paragraph spacing - .content and .content p are separate if <p> needs different styles */
+.content {
+    max-width: 900px; /* Match header width */
+    margin: 20px auto; /* Center it */
+    padding: 0 20px; /* Match nav padding */
+}
+
+.content p {
+    text-align: left; 
+    color: black;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Default h1 size for all pages */
+.header h1 {
+    font-family: 'AnzaHeader', sans-serif;
+    font-size: 32px; 
+    font-weight: normal; /* unbold font for h1 */
+    word-spacing: -40px; /* decrease spacing b/w words*/
+    letter-spacing: 7px; /* decrease spacing b/w letters*/
+    line-height: 0.9; /* decrease spacing line*/
+}
+
+/* h1 size for Tyler's page */
+.tyler-page h1 {
+    font-family: 'AnzaHeader', sans-serif;
+    font-size: 150px;
+    font-weight: normal; /* unbold font*/
+    word-spacing: -40px; /* decrease spacing b/w words*/
+    letter-spacing: 7px; /* decrease spacing b/w letters*/
+    line-height: 0.9; /* decrease spacing line*/
 }
