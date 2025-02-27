@@ -13,8 +13,17 @@ const slideElement = document.getElementById("slide");
 
 // Function to change the image
 function changeSlide() {
-    currentImageIndex = (currentImageIndex + 1) % images.length; // Loop back after last image
-    slideElement.src = images[currentImageIndex]; // Update image source
+    // Add animation class
+    slideElement.classList.add("slide-animation");
+
+    // Delay changing the image to let the animation run smoothly
+    setTimeout(() => {
+        currentImageIndex = (currentImageIndex + 1) % images.length; // Loop back after last image
+        slideElement.src = images[currentImageIndex]; // Update image source
+        
+        // Remove animation class so it can be added again in the next cycle
+        slideElement.classList.remove("slide-animation");
+    }, 800); // Match this with the animation duration (0.8s)
 }
 
 // Change image every 3 seconds
