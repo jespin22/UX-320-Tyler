@@ -1,100 +1,98 @@
+/* ==================== GENERAL STYLES ==================== */
 body {
-    margin: 0;
-    padding: 0;
     background-color: #101010;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-.container {
+/* ==================== NAVIGATION (HEADER & FOOTER) ==================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: black;
+    position: fixed;
+    top: 0;
     width: 100%;
-    max-width: 1440px;
-    margin: auto;
-    padding: 20px;
+    z-index: 1000;
 }
 
-.header h1 {
-    font-size: 100px;
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
     text-transform: uppercase;
 }
 
-.highlight {
-    color: #3A99E6;
+.logo {
+    height: 40px;
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 80px;
 }
 
 .slideshow-container {
+    max-width: 1000px;
+    height: auto;
     position: relative;
+}
+
+.artist-slide {
+    width: 100%;
+    transition: opacity 1s ease-in-out;
+}
+
+.scroll-arrow {
+    width: 40px;
+    margin-top: 20px;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+.cta {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 30px;
+    transition: background 0.3s ease-in-out;
+}
+
+.cta:hover {
+    background-color: #d35400;
+}
+
+/* ==================== ABOUT SECTION ==================== */
+.about {
+    padding: 100px 20px;
+}
+
+.bio-image {
     width: 80%;
     max-width: 600px;
     margin: auto;
-    overflow: hidden;
-}
-
-.slides {
-    display: flex;
-    transition: transform 1s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-}
-
-.slide img {
-    width: 100%;
-    border-radius: 50%;
-    background-color: gray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
-}
-
-.steps {
-    margin-top: 50px;
-}
-
-.step {
-    font-size: 20px;
-    margin: 20px 0;
-}
-
-.cta-button {
-    background-color: orange;
-    color: #101010;
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-/* Navigation bar - bg */
-header {
-    background-color: black;
-    padding: 15px 20px;
-}
-/* Navigation bar - spacing */
-nav {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* Navigation bar - font */
-.nav-item {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 0 20px; /* Spacing between items */
-}
-
-/* Logo - size */
-.logo {
-    width: 30px; 
-    height: 30px;
+    display: block;
 }
