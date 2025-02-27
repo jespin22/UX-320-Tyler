@@ -1,6 +1,6 @@
 // List of images to cycle through
 const images = [
-    "Class 11/CTRL/Landing Page/CTRL THE  (artsist) /Property 1=SZA.png", 
+    "Landing Page/Landing Images/CTRL THE (artist)/Property 1=SZA.png", 
     "Class 11/CTRL/Landing Page/CTRL THE  (artsist) /Property 2=TYLER.png", 
     "Class 11/CTRL/Landing Page/CTRL THE  (artsist) /Property 3=DOECHII.png"
 ];
