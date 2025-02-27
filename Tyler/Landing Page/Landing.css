@@ -13,6 +13,19 @@ body {
 header {
     background-color: black;
     padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+}
+
+/* Prevents content from being hidden behind header */
+body{
+    margin: 0;
+    padding-top: 60px;
+    overflow-x: hidden;
 }
 /* Navigation bar - spacing */
 nav {
