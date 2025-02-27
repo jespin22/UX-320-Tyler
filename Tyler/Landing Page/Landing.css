@@ -130,21 +130,18 @@ nav {
     overflow: hidden;
     width: 80%;
     max-width: 1000px;
-    margin: 40px auto;
     position: relative;
 }
 
 .carousel-track {
     display: flex;
-    gap: 25px;
+    gap: 100px;
     animation: slide 12s linear infinite;
 }
 
 .carousel-track img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid white;
+    width: 180px;
+    height: 180px;
 }
 
 @keyframes slide {
