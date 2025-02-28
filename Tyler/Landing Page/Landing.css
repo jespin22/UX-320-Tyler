@@ -116,7 +116,7 @@ nav {
 
 /* ==================== ABOUT SECTION ==================== */
 .about {
-    padding: 100px 20px;
+    padding: 150px 20px; 
 }
 
 .bio-image {
@@ -139,8 +139,8 @@ nav {
 }
 
 .carousel-track img {
-    width: 180px;
-    height: 180px;
+    width: 225px;
+    height: 225px;
 }
 
 @keyframes slide {
