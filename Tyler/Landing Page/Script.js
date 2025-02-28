@@ -11,8 +11,19 @@ let currentImageIndex = 0;
 // Get the slideshow element
 const slideElement = document.getElementById("slide");
 
+
 // Function to change the image
 function changeSlide() {
+    slideElement.classList.remove("slide-animation"); // Reset animation
+
+    setTimeout(() => {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        slideElement.src = images[currentImageIndex];
+
+        slideElement.classList.add("slide-animation");
+    }, 200);
+}
+
     // Add animation class
     slideElement.classList.add("slide-animation");
 
@@ -24,7 +35,7 @@ function changeSlide() {
         // Remove animation class so it can be added again in the next cycle
         slideElement.classList.remove("slide-animation");
     }, 800); // Match this with the animation duration (0.8s)
-}
+
 
 // Change image every 3 seconds
 setInterval(changeSlide, 3000);
