@@ -128,14 +128,12 @@ nav {
 .artist-carousel {
     display: flex;
     overflow: hidden;
-    width: 80%;
-    max-width: 1000px;
     position: relative;
 }
 
 .carousel-track {
     display: flex;
-    gap: 100px;
+    gap: 150px;
     animation: slide 12s linear infinite;
 }
 
