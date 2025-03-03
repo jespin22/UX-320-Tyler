@@ -85,22 +85,6 @@ nav {
     50% { transform: translateY(10px); }
 }
 
-@keyframes slide-in {
-    from {
-      transform: translateX(0%);
-      opacity: 0.5;
-    }
-    to {
-      transform: translateX(100%);
-      opacity: 1;
-    }
-  }
-  
-  .slide-animation {
-    animation: slide-in 0.8s ease-in-out;
-  }
-  
-
 .cta {
     background-color: #FE7A2D;
     color: white;
@@ -130,6 +114,29 @@ nav {
     margin: auto;
     display: block;
 }
+/*how it works*/
+.how-it-works {
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+.how-it-works-title {
+    font-family: "Anza", sans-serif;
+    font-size: 50px;
+    font-weight: normal;
+    color: #F4D504;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.how-it-works-subtitle {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: white;
+    text-transform: uppercase;
+}
+
 /* ==================== ARTIST CAROUSEL ==================== */
 .artist-carousel {
     display: flex;
