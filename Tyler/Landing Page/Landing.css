@@ -58,7 +58,7 @@ nav {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    padding-top: 80px;
+    padding-top: 20px;
 }
 
 .slideshow-container {
@@ -166,8 +166,9 @@ nav {
 }
 
 .steps-image {
-    width: 80%;
+    width: 100%;
     max-width: 1200px;
+    min-width: 300px;
     margin: auto;
     display: block;
 }
