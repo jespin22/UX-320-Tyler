@@ -1,71 +1,8 @@
-// Array to store the setlist songs
-let setlist = [];
-
-/**
- * Function to add a song to the setlist
- */
-function addSong() {
-    let songInput = document.getElementById("song-input"); // Get input field
-    let setlistContainer = document.getElementById("setlist"); // Get setlist container
-
-    //  Check if elements exist
-    if (!songInput || !setlistContainer) {
-        console.error("Error: Input field or setlist container not found.");
-        return;
-    }
-
-    let song = songInput.value.trim(); // Trim input to remove unnecessary spaces
-
-    // Check if input is empty
-    console.log("Adding song:", song);
-
-    if (song) {
-        setlist.unshift(song); // Add song to the TOP of the setlist array
-        displaySetlist(); // Update the UI
-        songInput.value = ""; // Clear input field
-    } else {
-        console.warn("Warning: No song entered.");
-    }
-}
-
-/**
- * Function to display the setlist 
- */
-function displaySetlist() {
-    let setlistContainer = document.getElementById("setlist"); // Get the setlist container
-
-    // Clear previous content
-    setlistContainer.innerHTML = "";
-
-    //  placeholder text
-    if (setlist.length === 0) {
-        setlistContainer.innerHTML = "<p><em>Your setlist will appear here...</em></p>";
-        return;
-    }
-
-    // Loop through the setlist array and add each song as a list item
-    setlist.forEach((song, index) => {
-        let songItem = document.createElement("p"); // Create a new <p> element
-        songItem.textContent = `${index + 1}. ${song}`; // Add song text with numbering
-        setlistContainer.appendChild(songItem); // Append to the setlist container
-    });
-
-    // Confirm setlist was updated
-    console.log("Updated Setlist:", setlist);
-}
-
-// Ensure the placeholder text appears on initial page load
-document.addEventListener("DOMContentLoaded", function () {
-    displaySetlist();
-});
-
-// curate the set list
-
 let albumIndex = 0;
 const albums = [
-    { cover: "./Setlist Page/Setlist 1 Album = Chroma.png", songs: "./Setlist Page/Setlist 1 Songs = Chroma.png" },
-    { cover: "./Setlist Page/Setlist 2 Album = CMIYG .png", songs: "./Setlist Page/Setlist 2 Songs = CMIYG.png" },
-    { cover: "./Setlist Page/Setlist 3 Album = IGOR.png", songs: "./Setlist Page/Setlist 3 Songs = IGOR.png" }
+    {cover: "./Images/Setlist Page/Setlist 1 Album = Chroma.png", songs: "./Images/Setlist Page/Setlist 1.1 Songs = Chroma.png"},
+    { cover: "./Images/Setlist Page/Setlist 2 Album = CMIYG .png", songs: "./Images/Setlist Page/Setlist 2 Songs = CMIYG.png" },
+    { cover: "./Images/Setlist Page/Setlist 3 Album = IGOR.png", songs: "./Images/Setlist Page/Setlist 3 Songs = IGOR.png" }
 ];
 
 function updateAlbumDisplay() {
