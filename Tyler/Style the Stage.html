@@ -3,22 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Style the Stage</title>
+    <title>Style The Stage</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-    <!-- Grabbing css for Inter font -->
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFD42D;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Referencing css style file -->
-    <link rel="stylesheet" href="styles.css">
+        header {
+            background-color: black;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 60px;
+        }
+
+        .logo {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Title & Key Images */
+        .title-banner{
+            width: 70%;
+            max-width: 400px;
+            margin: 100px 0;
+        }
+
+        .key-banner{
+            width: 70%;
+            max-width: 700px;
+            margin: -20px 0;
+        }
+
+        /* Layout - Three-column Flexbox */
+        .stage-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0px; /* Space between columns */
+            max-width: 1100px;
+            margin: -100px auto;
+        }
+
+        .controls-left,
+        .controls-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 140px;
+        }
+
+        .stage-container {
+            position: relative;
+            width: 950px;
+            height: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Stage and Overlapping Elements */
+        .stage-background {
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .stage-overlay {
+            position: absolute;
+            width: 100%;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #backdrop { z-index: 2; }
+        #props { z-index: 3; }
+        #lighting { z-index: 4; }
+
+        /* Arrows */
+        .arrow-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+        }
+
+        .arrow-btn img {
+            width: 100%;
+            height: auto;
+        }
+
+         /* Navigation Buttons */
+         .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            background: transparent;
+            color: red;
+            border: 4px solid red;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+
+        .next-button {
+            background: red;
+            color: white;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 30px;
+            border: none;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <!-- Navigation bar -->
-        <nav>
-            <a href="Landing Page/Landing Page.html" class="nav-item">HOME</a>
-            <img src = "Images/logo.png" alt = "logo" class="logo">
-            <a href="Pick Artist.html" class="nav-item">ARTISTS</a>
-        </nav>
-    </header>
+    <nav>
+        <a href="#" class="nav-item">HOME</a>
+        <img src="./Images/logo.png" alt="logo" class="logo">
+        <a href="Pick Artist.html" class="nav-item">ARTISTS</a>
+    </nav>
+</header>
+
+<main>
+    <img src="./Images/Stage Page/Style The Stage.png" alt="Style The Stage" class="title-banner">
+    <div>
+        <img src="./Images/Stage Page/Key Stage.png" alt="Key" class="key-banner">
+    </div>
+        <!-- Three-Column Layout -->
+        <div class="stage-wrapper">
+            
+            <!-- Left Arrows -->
+            <div class="controls-left">
+                <button class="arrow-btn" id="prev-lighting"><img src="./Images/Stage Page/RED left.png" alt="Left"></button>
+                <button class="arrow-btn" id="prev-backdrop"><img src="./Images/Stage Page/BLUE left.png" alt="Left"></button>
+                <button class="arrow-btn" id="prev-props"><img src="./Images/Stage Page/GREEN left.png" alt="Left"></button>
+            </div>
+
+            <!-- Stage Center -->
+            <div class="stage-container">
+                <img src="./Images/Stage Page/STAGE.png" alt="Stage" class="stage-background">
+                <img id="backdrop" src="./Images/Stage Page/BACKDROP 1.png" alt="Backdrop" class="stage-overlay">
+                <img id="props" src="./Images/Stage Page/PROPS 1.png" alt="Props" class="stage-overlay">
+                <img id="lighting" src="./Images/Stage Page/LIGHTING 1.png" alt="Lighting" class="stage-overlay">
+            </div>
+
+            <!-- Right Arrows -->
+            <div class="controls-right">
+                <button class="arrow-btn" id="next-lighting"><img src="./Images/Stage Page/RED right.png" alt="Right"></button>
+                <button class="arrow-btn" id="next-backdrop"><img src="./Images/Stage Page/BLUE right.png" alt="Right"></button>
+                <button class="arrow-btn" id="next-props"><img src="./Images/Stage Page/GREEN right.png" alt="Right"></button>
+            </div>
+
+        </div>
+
+        <div class="navigation-buttons">
+            <button class="back-button">BACK</button>
+            <button class="next-button">NEXT STEP</button>
+        </div>
+
+    </main>
+
+    <script>
+        const backdropImages = ["Images/Stage Page/BACKDROP 1.png", "Images/Stage Page/Backdrop 2.png", "Images/Stage Page/Backdrop 3.png"];
+        const propsImages = ["Images/Stage Page/PROPS 1.png", "Images/Stage Page/PROPS 2.png", "Images/Stage Page/PROPS 3.png"];
+        const lightingImages = ["Images/Stage Page/LIGHTING 1.png", "Images/Stage Page/LIGHTING 2.png", "Images/Stage Page/LIGHTING 3.png"];
+
+        let backdropIndex = 0, propsIndex = 0, lightingIndex = 0;
+
+        function changeImage(index, images, elementId) {
+            let imgElement = document.getElementById(elementId);
+            imgElement.style.opacity = 0;
+            setTimeout(() => {
+                imgElement.src = images[index];
+                imgElement.style.opacity = 1;
+            }, 300);
+        }
+
+        document.getElementById("prev-backdrop").addEventListener("click", () => {
+            backdropIndex = (backdropIndex - 1 + backdropImages.length) % backdropImages.length;
+            changeImage(backdropIndex, backdropImages, "backdrop");
+        });
+
+        document.getElementById("next-backdrop").addEventListener("click", () => {
+            backdropIndex = (backdropIndex + 1) % backdropImages.length;
+            changeImage(backdropIndex, backdropImages, "backdrop");
+        });
+
+        document.getElementById("prev-props").addEventListener("click", () => {
+            propsIndex = (propsIndex - 1 + propsImages.length) % propsImages.length;
+            changeImage(propsIndex, propsImages, "props");
+        });
+
+        document.getElementById("next-props").addEventListener("click", () => {
+            propsIndex = (propsIndex + 1) % propsImages.length;
+            changeImage(propsIndex, propsImages, "props");
+        });
+
+        document.getElementById("prev-lighting").addEventListener("click", () => {
+            lightingIndex = (lightingIndex - 1 + lightingImages.length) % lightingImages.length;
+            changeImage(lightingIndex, lightingImages, "lighting");
+        });
+
+        document.getElementById("next-lighting").addEventListener("click", () => {
+            lightingIndex = (lightingIndex + 1) % lightingImages.length;
+            changeImage(lightingIndex, lightingImages, "lighting");
+        });
+
+    </script>
+
+</body>
 </html>
