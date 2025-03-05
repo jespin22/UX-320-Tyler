@@ -4,39 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curate the Setlist</title>
-
-    <!-- Grabbing css for Inter font -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="Styles.css">
 </head>
+
 <body>
+    
     <header>
-        <!-- Navigation bar -->
         <nav>
-            <a href="Landing Page/Landing Page.html" class="nav-item">HOME</a>
-            <img src = "Images/logo.png" alt = "ctrl the experience logo" class="logo">
+            <a href="#" class="nav-item">HOME</a>
+            <img src="Landing Images/logo.png" alt="logo" class="logo">
             <a href="Pick Artist.html" class="nav-item">ARTISTS</a>
         </nav>
     </header>
-    <div class="setlist-container">
-        <h2> Curate The Setlist </h2>
-        <p>Browse the artist's discography, select songs, and type your custom setlist.</p>
 
-        <div class="song-list" id="setlist">
-            <p><em>Your setlist will appear here...</em></p>
+    <main class="setlist-container">
+        <img src="./Setlist Page/Group 98.png" alt="Curate the Setlist" class="title-image">
+
+        <div class="album-section">
+            <button class="nav-arrow left" onclick="prevAlbum()">&#9664;</button>
+
+            <div class="album-container">
+                <img class="album-side" id="leftAlbum">
+                <div class="album-card center" id="mainAlbumCard" onclick="flipCard()">
+                    <div class="album-front">
+                        <img id="mainAlbum">
+                    </div>
+                    <div class="album-back">
+                        <img id="mainSongs">
+                    </div>
+                </div>
+                <img class="album-side" id="rightAlbum">
+            </div>
+
+            <button class="nav-arrow right" onclick="nextAlbum()">&#9654;</button>
         </div>
-        
-        <input type="text" id="song-input" placeholder="Type songs">
-        <button class="btn add-btn" onclick="addSong()">Add Song</button>
 
-        <br><br>
-        <button class="btn back-btn">Back</button>
-        <button class="btn next-btn">Next Step</button>
-    </div>
+        <div class="setlist-box" id="setlist-box">
+            <p id="setlist-placeholder" class="setlist-placeholder">Your setlist will appear here...</p>
+        </div>
 
-    <!-- Link to external JavaScript file -->
-    <script src="Animations.js"></script>
+        <div class="input-section">
+            <input type="text" id="songInput" placeholder="TYPE SONGS..." oninput="hidePlaceholder()">
+            <button class="add-song" onclick="addSong()">ADD SONG</button>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="back">BACK</button>
+            <button class="next">NEXT STEP</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
