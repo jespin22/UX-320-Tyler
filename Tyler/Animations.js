@@ -1,6 +1,6 @@
 let albumIndex = 0;
 const albums = [
-    {cover: "./Images/Setlist Page/Setlist 1 Album = Chroma.png", songs: "./Images/Setlist Page/Setlist 1.1 Songs = Chroma.png"},
+    {cover: "./Images/Setlist Page/Setlist 1 Album = Chroma.png", songs: "./Images/Setlist Page/Setlist 1 Songs = Chroma.png"},
     { cover: "./Images/Setlist Page/Setlist 2 Album = CMIYG .png", songs: "./Images/Setlist Page/Setlist 2 Songs = CMIYG.png" },
     { cover: "./Images/Setlist Page/Setlist 3 Album = IGOR.png", songs: "./Images/Setlist Page/Setlist 3 Songs = IGOR.png" }
 ];
