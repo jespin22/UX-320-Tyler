@@ -9,15 +9,13 @@
 /* Apply Inter to the whole page */
 body {
     font-family: 'Inter', sans-serif;
-}
-/* Overall page */
-body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     background-color: #FFD400;
     color: #FF3B30;
     text-align: center;
+    padding-top: 60px; /* Prevents content from being hidden behind header */
+    overflow-x: hidden;
 }
 
 /* Navigation bar - bg */
@@ -32,12 +30,6 @@ header {
     
 }
 
-/* Prevents content from being hidden behind header */
-body{
-    margin: 0;
-    padding-top: 60px;
-    overflow-x: hidden;
-}
 /* Navigation bar - spacing */
 nav {
     display: flex;
@@ -53,51 +45,19 @@ nav {
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 0 20px; /* Spacing between items */
-    margin-right: 60px;
+    margin: 0 30px; /* Spacing between items */
 }
-/* Underline navigation items on hover */
+/* Navigation bar - hover */
 .nav-item:hover {
     text-decoration: underline; 
 }
 
-/* Logo - size */
+/* Logo */
 .logo {
     width: 30px; 
     height: 30px;
 }
 
-/* Paragraph spacing - .content and .content p are separate if <p> needs different styles */
-.content {
-    max-width: 900px; /* Match header width */
-    margin: 20px auto; /* Center it */
-    padding: 0 20px; /* Match nav padding */
-}
-.content p {
-    text-align: left; 
-    color: black;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* Default paragraph font for all pages */
-p {
-    font-family: 'Inter', sans-serif;
-    font-weight: 450; /* 600 = semi bold; 300 - light */
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333; 
-}
-
-/* Default h1 size for all pages */
-.header h1 {
-    font-family: 'AnzaHeader', sans-serif;
-    font-size: 32px; 
-    font-weight: normal; /* unbold font for h1 */
-    word-spacing: -40px; /* decrease spacing b/w words*/
-    letter-spacing: 7px; /* decrease spacing b/w letters*/
-    line-height: 0.9; /* decrease spacing line*/
-}
 /* h1 size for Tyler's page */
 .tyler-page h1 {
     font-family: 'AnzaHeader', sans-serif;
@@ -108,6 +68,49 @@ p {
     line-height: 0.9; /* decrease spacing line*/
 }
 
+/* Content container */
+.content {
+    max-width: 900px; /* Match header width */
+    margin: 20px auto; /* Center it */
+    padding: 0 20px; /* Match nav padding */
+    text-align: left; 
+
+}
+/* Align text-to-speech icon with paragraph */
+.bio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align icon with the top of the text */
+    max-width: 900px;
+    margin: 0 auto; /* Centers the content */
+}
+
+/* Text-to-speech icon */
+#speech-box {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 5px; /* Creates space between the icon and paragraph */
+}
+
+/* When active, swap the image */
+#speech-box.active img {
+    content: url("Images/text-to-speech-black.png");
+}
+
+/* Paragraph settings */
+#tyler-bio {
+    flex: 1; /* Allows paragraph to fill available space */
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+
+
 /* Change "Learn More" default text and when hovering */
 .learn-more {
     color: red; 
@@ -115,7 +118,6 @@ p {
     cursor: pointer;
 }
 .learn-more:hover {
-    color: red; /* Change color on hover */
     text-decoration: underline; /* Add underline on hover */
 }
 
@@ -132,30 +134,15 @@ p {
     margin-top: 30px;
     border-radius: 80px;
     transition: background 0.3s ease-in-out;
+    display: block;  
+    margin-left: auto;  /* Centers horizontally */
+    margin-right: auto; /* Centers horizontally */
 }
 .cta:hover {
     background-color: #000000;
 }
 
-/* Left align text-to-speech */
-.content {
-    margin: 20px auto; 
-    padding: 0 20px;    
-    text-align: left;   
-}
-/* Put above paragraph */
-.icon-text {
-    display: block;
-    text-align: left;   
-    margin-bottom: 20px; 
-}
-/* Text-to-speech icon */
-.paragraph-icon {
-    width: 20px;  /* Adjust size */
-    height: 20px;
-    display: block; /* Places the icon above the text */
-    margin-bottom: 5px; /* Adds space between icon and paragraph */
-}
+
 
 /* Setlist CSS */
 body {
@@ -213,17 +200,14 @@ input, button {
 /* Text-to-speech */
 #speech-box {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 30px; /* Smaller */
     height: 30px;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
-}
-
-#speech-icon {
-    width: 100%;
-    height: auto;
+    margin-bottom: 2px;
+    max-width: 900px; /* Match header width */
 }
 
 /* When active, swap the image */
@@ -236,3 +220,4 @@ input, button {
     height: auto; /* Maintains aspect ratio */
     object-fit: contain; /* Ensures no weird cropping */
 }
+
