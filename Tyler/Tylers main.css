@@ -11,7 +11,7 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FFD400;
+    background-color: #F4D504;
     color: #FF3B30;
     text-align: center;
     padding-top: 60px; /* Prevents content from being hidden behind header */
@@ -29,7 +29,6 @@ header {
     z-index: 1000;
     
 }
-
 /* Navigation bar - spacing */
 nav {
     display: flex;
@@ -58,14 +57,25 @@ nav {
     height: 30px;
 }
 
-/* h1 size for Tyler's page */
-.tyler-page h1 {
-    font-family: 'AnzaHeader', sans-serif;
-    font-size: 150px;
-    font-weight: normal; /* unbold font*/
-    word-spacing: -40px; /* decrease spacing b/w words*/
-    letter-spacing: 7px; /* decrease spacing b/w letters*/
-    line-height: 0.9; /* decrease spacing line*/
+/* Apply Inter font to paragraph */
+p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 450; /* You can adjust the weight (400, 500, 600, etc.) */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000000;
+}
+
+/* Container for the hero image */
+.hero-image-container {
+    max-width: 900px; /* Match the max width of the paragraph */
+    margin: 60px auto 20px; /* Center the image and give some space below */
+}
+/* Styling for the hero image */
+.tyler-image {
+    width: 100%; /* Make the image take up full width of its container */
+    height: auto; /* Keep the aspect ratio */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
 }
 
 /* Content container */
@@ -84,21 +94,23 @@ nav {
     max-width: 900px;
     margin: 0 auto; /* Centers the content */
 }
-
 /* Text-to-speech icon */
-#speech-box {
+#speech-icon {
     width: 30px;
     height: 30px;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
     margin-bottom: 5px; /* Creates space between the icon and paragraph */
 }
-
 /* When active, swap the image */
-#speech-box.active img {
+#speech-icon.active img {
     content: url("Images/text-to-speech-black.png");
 }
-
+#speech-icon img {
+    width: 100%; /* Forces both images to match the container */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: contain; /* Ensures no weird cropping */
+}
 /* Paragraph settings */
 #tyler-bio {
     flex: 1; /* Allows paragraph to fill available space */
@@ -107,9 +119,6 @@ nav {
     line-height: 1.6;
     color: #333;
 }
-
-
-
 
 /* Change "Learn More" default text and when hovering */
 .learn-more {
@@ -142,82 +151,7 @@ nav {
     background-color: #000000;
 }
 
-
-
-/* Setlist CSS */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4e04d;
-    text-align: center;
-}
-
-.setlist-container {
-    width: 60%;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.song-list {
-    background: #d3d3d3;
-    padding: 10px;
-    min-height: 150px;
-    border-radius: 5px;
-    text-align: left;
-    margin-bottom: 15px;
-}
-
-input, button {
-    padding: 10px;
-    margin: 5px;
-    font-size: 14px;
-}
-
-.btn {
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.add-btn {
-    background-color: #d3d3d3;
-}
-
-.back-btn {
-    border: 2px solid red;
-    background: none;
-    color: red;
-}
-
-.next-btn {
-    background-color: red;
-    color: white;
-}
-
-/* Text-to-speech */
-#speech-box {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 30px; /* Smaller */
-    height: 30px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-    margin-bottom: 2px;
-    max-width: 900px; /* Match header width */
-}
-
-/* When active, swap the image */
-#speech-box.active img {
-    content: url("Images/text-to-speech-black.png"); /* Change to the second image */
-}
-
-#speech-box img {
-    width: 100%; /* Forces both images to match the container */
-    height: auto; /* Maintains aspect ratio */
-    object-fit: contain; /* Ensures no weird cropping */
-}
-
+/* Keyboard nav - accessibility */
+a:focus, button:focus {
+    outline: 3px solid #4d90fe;
+  }
