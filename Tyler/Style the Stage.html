@@ -85,6 +85,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 0px;
+
         }
 
         /* Stage and Overlapping Elements */
@@ -118,26 +120,30 @@
             height: auto;
         }
 
-         /* Navigation Buttons */
-         .navigation-buttons {
-             display: flex;
-             justify-content: center;
-             gap: 20px;
-             margin-top: 20px;
-             pointer-events: auto;
-             }
+        /* Navigation Buttons */
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+
+        }
 
         .back-button {
             background: transparent;
-             color: red;
-             border: 4px solid red;
-             padding: 16px 40px;
-              font-size: 18px;
-              font-weight: bold;
-               cursor: pointer;
-                border-radius: 30px;
-                transition: 0.3s ease-in-out;
-             }
+            color: red;
+            border: 4px solid red;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 100px;
+            margin-bottom: 50px;
+
+        }
 
         .next-button {
             background: red;
@@ -148,20 +154,11 @@
             cursor: pointer;
             border-radius: 30px;
             border: none;
-            transition: 0.3s ease-in-out;
-        }
+            text-decoration: none;
+            margin-top: 100px;
+            margin-bottom: 50px;
 
-        /* Hover Effects */
-        .back-button:hover {
-            background: rgb(0, 0, 0);
-            color: white;
         }
-
-        .next-button:hover {
-            background: rgb(0, 139, 139);
-            color: #FFD42D;
-        }
-        
     </style>
 </head>
 <body>
@@ -206,8 +203,8 @@
         </div>
 
         <div class="navigation-buttons">
-            <a href="Tyler/Pick the Perfect Fit.html"><button class="back-button">BACK</button></a>
-            <a href="Tyler/Curate the Setlist.html"><button class="next-button">NEXT STEP</button></a>
+            <a href="Pick the Perfect Fit.html" class="back-button">BACK</a>
+            <a href="Your show is ready.html" class="next-button">NEXT STEP</a>  
         </div>
         
         

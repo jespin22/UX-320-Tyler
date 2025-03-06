@@ -191,33 +191,44 @@ input {
     font-weight: bold;
     cursor: pointer;
     border-radius: 30px;
-}
 
-/* Navigation Buttons */
-.nav-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
 }
+        /* Navigation Buttons */
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 0px;
+            margin-bottom: 0px;
 
-.back {
-    background: transparent;
-    color: red;
-    border: 4px solid red;
-    padding: 16px 40px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 30px;
-}
+        }
 
-.next {
-    background: red;
-    color: white;
-    padding: 16px 40px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 30px;
-    border: none;
-}
+        .back-button {
+            background: transparent;
+            color: red;
+            border: 4px solid red;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 100px;
+            margin-bottom: 50px;
+
+        }
+
+        .next-button {
+            background: red;
+            color: white;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 30px;
+            border: none;
+            text-decoration: none;
+            margin-top: 100px;
+            margin-bottom: 50px;
+
+        }
