@@ -11,7 +11,6 @@ let currentArtistIndex = 0;
 // Get the image element in the hero section
 const artistImageElement = document.getElementById("artistSlideshow");
 
-
 // Function to update the image every 3 seconds
 function updateArtistImage() {
     currentArtistIndex = (currentArtistIndex + 1) % artistImages.length; 
