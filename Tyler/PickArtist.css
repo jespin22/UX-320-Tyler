@@ -16,38 +16,42 @@ body {
     padding: 0;
     overflow-x: hidden;
 }
-
-/* HEADER & FOOTER */
-header, footer {
-    background: transparent;
+/* Navigation bar - bg */
+header {
+    background-color: black;
     padding: 15px 20px;
     position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    
+}
+/* Navigation bar - spacing */
+nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-
-header {
-    top: 0;
-}
-
-footer {
-    bottom: 0;
-}
-
+/* Navigation bar - font */
 .nav-item {
     color: white;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
+    margin: 0 30px; /* Spacing between items */
+}
+/* Navigation bar - hover */
+.nav-item:hover {
+    text-decoration: underline; 
 }
 
+/* Logo */
 .logo {
-    width: 30px;
+    width: 30px; 
     height: 30px;
 }
 
