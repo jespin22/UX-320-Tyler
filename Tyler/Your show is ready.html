@@ -4,21 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Show is Ready</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
 
-    <!-- Grabbing css for Inter font -->
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        @font-face {
+            font-family: 'Anza';
+            src: url('fonts/Anza-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-    <!-- Referencing css style file -->
-    <link rel="stylesheet" href="styles.css">
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFD42D;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: black;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 60px;
+        }
+
+        .logo {
+            width: 30px;
+            height: 30px;
+        }
+
+
+        /* Title Section */
+        .title-section {
+            margin-top: 100px;
+        }
+
+        .main-title {
+            font-family: 'Anza', sans-serif;
+            font-size: 55px;
+            color: red;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: normal; /* Makes sure it's NOT bold */
+        }
+
+        .sub-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            max-width: 600px;
+            margin: 10px auto;
+        }
+
+        /* Poster Image */
+        .poster-container {
+            margin: 40px auto;
+            width: 80%;
+            max-width: 550px;
+        }
+
+        .poster {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .button {
+            background: red;
+            color: white;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 30px;
+            border: none;
+            text-transform: uppercase;
+        }
+
+        .return-home {
+            color: black;
+            border: 5px solid black;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            text-decoration: none;
+            text-transform: uppercase
+        }
+
+    </style>
 </head>
+
 <body>
+
     <header>
-        <!-- Navigation bar -->
         <nav>
-            <a href="Landing Page/Landing Page.html" class="nav-item">HOME</a>
-            <img src = "Images/logo.png" alt = "logo" class="logo">
+            <a href="#" class="nav-item">HOME</a>
+            <img src="./Images/logo.png" alt="logo" class="logo">
             <a href="Pick Artist.html" class="nav-item">ARTISTS</a>
         </nav>
     </header>
+
+    <main>
+        <!-- Title -->
+        <div class="title-section">
+            <h1 class="main-title">Your Show is Ready</h1>
+            <p class="sub-title">
+                Review your setlist, outfit, and stage design. Download or share your final concert experience setup.
+            </p>
+        </div>
+
+        <!-- Poster -->
+        <div class="poster-container">
+            <img src="./Images/POSTER.png" alt="Show Poster" class="poster">
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button class="button" onclick="downloadPDF()">Download</button>
+            <button class="button" onclick="shareLink()">Share</button>
+        </div>
+
+        <!-- Return Home Button -->
+        <a href="index.html" class="return-home">Return Home</a>
+    </main>
+
+    <script>
+        function downloadPDF() {
+            window.location.href = "files/show-setup.pdf";
+        }
+
+        function shareLink() {
+            navigator.clipboard.writeText(window.location.href);
+            alert("Link copied to clipboard!");
+        }
+    </script>
+
+</body>
 </html>
