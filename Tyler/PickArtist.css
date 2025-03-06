@@ -1,113 +1,54 @@
 /* Global Reset */
-
-/* Import custom font */
-@font-face {
-    font-family: 'AnzaHeader';
-    src: url('Fonts/Anza-header.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Apply Inter to the whole page */
-body {
-    font-family: 'Inter', sans-serif;
-}
-/* Overall page */
-body {
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: #FF3B30;
-    text-align: center;
+    box-sizing: border-box;
 }
 
-/* Navigation bar - bg */
-header {
-    background-color: black;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: black;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* HEADER & FOOTER */
+header, footer {
+    background: transparent;
     padding: 15px 20px;
     position: fixed;
-    top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Prevents content from being hidden behind header */
-body{
-    margin: 0;
-    padding-top: 60px;
-    overflow-x: hidden;
+header {
+    top: 0;
 }
-/* Navigation bar - spacing */
-nav {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+
+footer {
+    bottom: 0;
 }
-/* Navigation bar - font */
+
 .nav-item {
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 0 20px; /* Spacing between items */
-    margin-right: 60px;
-}
-/* Underline navigation items on hover */
-.nav-item:hover {
-    text-decoration: underline; 
 }
 
-/* Logo - size */
 .logo {
-    width: 30px; 
+    width: 30px;
     height: 30px;
-}
-
-/* Paragraph spacing - .content and .content p are separate if <p> needs different styles */
-.content {
-    max-width: 900px; /* Match header width */
-    margin: 20px auto; /* Center it */
-    padding: 0 20px; /* Match nav padding */
-}
-.content p {
-    text-align: left; 
-    color: black;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* Default paragraph font for all pages */
-p {
-    font-family: 'Inter', sans-serif;
-    font-weight: 450; /* 600 = semi bold; 300 - light */
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333; 
-}
-
-/* Default h1 size for all pages */
-.header h1 {
-    font-family: 'AnzaHeader', sans-serif;
-    font-size: 32px; 
-    font-weight: normal; /* unbold font for h1 */
-    word-spacing: -40px; /* decrease spacing b/w words*/
-    letter-spacing: 7px; /* decrease spacing b/w letters*/
-    line-height: 0.9; /* decrease spacing line*/
-}
-/* h1 size for Tyler's page */
-.tyler-page h1 {
-    font-family: 'AnzaHeader', sans-serif;
-    font-size: 150px;
-    font-weight: normal; /* unbold font*/
-    word-spacing: -40px; /* decrease spacing b/w words*/
-    letter-spacing: 7px; /* decrease spacing b/w letters*/
-    line-height: 0.9; /* decrease spacing line*/
 }
 
 /* MAIN SECTION */
@@ -126,25 +67,26 @@ p {
 }
 
 /* CAROUSEL */
-.carousel-container {
+.carousel-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 75vh; /* Increase height to avoid clipping */
     overflow: hidden;
+    position: relative;
+    margin-top: 50px; /* Adjust spacing */
 }
 
 .carousel {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 40px;
+    gap: 80px;
     overflow-x: auto;
     scroll-behavior: smooth;
     white-space: nowrap;
-    padding: 50px 0;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    padding: 0 15%;
 }
 
 .carousel::-webkit-scrollbar {
@@ -154,15 +96,19 @@ p {
 /* ARTIST CARDS */
 .artist-card {
     flex: 0 0 auto;
-    width: 180px;
-    height: 180px;
+    width: 200px; /* Increase size */
+    height: 200px; /* Ensure proper proportions */
     border-radius: 50%;
     cursor: grab;
     user-select: none;
     text-align: center;
-    opacity: 0.4; /* Default blur effect */
+    opacity: 0.3;
     transform: scale(0.8);
-    transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.4s, opacity 0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content */
 }
 
 .artist-card img {
@@ -170,18 +116,27 @@ p {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    display: block;
 }
 
+/* Ensure artist name is properly aligned */
 .artist-card h2 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: yellow;
     text-transform: uppercase;
     margin-top: 10px;
+    opacity: 0.5;
 }
 
 /* ACTIVE ARTIST (Centered One) */
 .artist-card.active {
     opacity: 1;
     transform: scale(1.2);
+}
+
+.artist-card.active h2 {
+    opacity: 1;
+    font-size: 18px;
+    color: yellow;
 }
