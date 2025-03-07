@@ -127,7 +127,7 @@ nav {
     font-family: "Anza", sans-serif;
     font-size: 50px;
     font-weight: normal;
-    color: #F4D504;
+    color: #FFDF05;
     text-transform: uppercase;
     letter-spacing: 5px;
     font-weight: normal;
@@ -188,7 +188,7 @@ nav {
     font-size: 50px; /* Adjust for size */
     font-weight: bold;
     text-transform: uppercase;
-    color: #FFD700; /* Yellow text like the image */
+    color: #FFDF05; /* Yellow text like the image */
     letter-spacing: 3px; /* Adds spacing for style */
 }
 
