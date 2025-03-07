@@ -131,7 +131,7 @@ p {
 }
 
 /* Get Started button */
-.cta {
+.na {
     background-color: #bc2025;
     color: white;
     border: none;
@@ -147,6 +147,22 @@ p {
     margin-left: auto;  /* Centers horizontally */
     margin-right: auto; /* Centers horizontally */
 }
+
+.cta {
+    background:#bc2025;
+    color: white;
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    text-decoration: none;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+
 .cta:hover {
     background-color: #000000;
 }
