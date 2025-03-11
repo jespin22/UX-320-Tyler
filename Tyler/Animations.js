@@ -1,8 +1,24 @@
 let albumIndex = 0;
 const albums = [
-    {cover: "./Images/Setlist Page/Setlist 1 Album = Chroma.png", songs: "./Images/Setlist Page/Setlist 1 Songs = Chroma.png"},
-    { cover: "./Images/Setlist Page/Setlist 2 Album = CMIYG .png", songs: "./Images/Setlist Page/Setlist 2 Songs = CMIYG.png" },
-    { cover: "./Images/Setlist Page/Setlist 3 Album = IGOR.png", songs: "./Images/Setlist Page/Setlist 3 Songs = IGOR.png" }
+    {
+        cover: "./Images/Setlist Page/Setlist 1 Album = Chroma.png", 
+        songs: "./Images/Setlist Page/Setlist 1 Songs = Chroma.png", 
+        altCover:"Album covers for Tyler, The Creator's Chromakopia",
+        altSongs: "Song list for Tyler, The Creator's Chromakopia"
+    },
+    { 
+        cover: "./Images/Setlist Page/Setlist 2 Album = CMIYG .png", 
+        songs: "./Images/Setlist Page/Setlist 2 Songs = CMIYG.png",
+        altCover:"Album covers for Tyler, The Creator's Call Me If You Get Lost",
+        altSongs: "Song list for Tyler, The Creator's Call Me If You Get Lost"
+    },
+
+    { 
+        cover: "./Images/Setlist Page/Setlist 3 Album = IGOR.png", 
+        songs: "./Images/Setlist Page/Setlist 3 Songs = IGOR.png",
+        altCover:"Album covers for Tyler, The Creator's IGOR",
+        altSongs: "Song list for Tyler, The Creator's IGOR"
+     }
 ];
 
 function updateAlbumDisplay() {
