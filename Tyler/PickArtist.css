@@ -5,15 +5,6 @@
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-/* Import custom font */
-@font-face {
-    font-family: 'AnzaHeader';
-    src: url('Fonts/Anza-header.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
 body {
     font-family: 'Inter', sans-serif;
     background: black;
@@ -23,7 +14,8 @@ body {
     padding: 0;
     overflow-x: hidden;
 }
-/* Navigation bar - bg */
+
+/* Navigation Bar */
 header {
     background-color: black;
     padding: 15px 20px;
@@ -32,9 +24,8 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    
 }
-/* Navigation bar - spacing */
+
 nav {
     display: flex;
     justify-content: space-between; 
@@ -42,27 +33,26 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
 }
-/* Navigation bar - font */
+
 .nav-item {
     color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 0 30px; /* Spacing between items */
+    margin: 0 30px;
 }
-/* Navigation bar - hover */
+
 .nav-item:hover {
     text-decoration: underline; 
 }
 
-/* Logo */
 .logo {
     width: 30px; 
     height: 30px;
 }
 
-/* MAIN SECTION */
+/* Main Section */
 .title {
     font-size: 28px;
     font-weight: 700;
@@ -82,83 +72,71 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0; /* Vertical padding for spacing around the cards */
-    overflow: visible;  /* Allow content to overflow without clipping */
+    padding: 40px 0;
     position: relative;
-    width: 100%; /* Ensure full width of the container */
-    height: auto; /* Let it expand based on content */
+    width: 100%;
+    height: auto;
+    overflow: hidden;
 }
 
 /* CAROUSEL */
 .carousel {
     display: flex;
     align-items: center;
-    gap: 60px; /* Adjust gap between cards */
-    overflow-x: auto;
+    gap: 80px; /* Spacing between images */
     scroll-behavior: smooth;
     white-space: nowrap;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    width: auto; /* Allow carousel width to expand naturally */
-    padding: 0 10%; /* Horizontal padding for spacing around the carousel */
+    width: 100%;
+    justify-content: center;
 }
 
 /* ARTIST CARDS */
 .artist-card {
     flex: 0 0 auto;
-    width: 280px; /* Set width for the artist cards */
-    height: 280px; /* Set height for the artist cards */
-    border-radius: 50%; /* Make the card circular */
-    cursor: grab;
-    user-select: none;
+    cursor: pointer;
     text-align: center;
     opacity: 0.3;
-    transform: none; /* Keep them at normal size */
-    transition: transform 0.4s, opacity 0.4s;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Prevent the card from overflowing */
 }
 
+/* Make images grow naturally without being cut */
 .artist-card img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%; /* Ensure image is circular */
-    object-fit: cover; /* Preserve aspect ratio and cover the entire circle */
+    width: 180px; /* Default size */
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
     display: block;
+    transition: transform 0.4s ease-in-out;
 }
 
-/* ACTIVE ARTIST (Centered One) */
-.artist-card.active {
-    opacity: 1;
-    transform: scale(1.1); /* Slightly scale the active card */
-}
-
+/* ACTIVE ARTIST - Enlarges smoothly without cropping */
 .artist-card.active img {
-    transform: none; /* Prevent image from scaling */
+    width: 250px; /* Enlarged size */
+    height: 250px;
+    transform: scale(1.2);
+    opacity: 1;
 }
 
-.artist-card.active {
-    width: 280px; /* Keep the card size the same */
-    height: 280px; /* Keep the card size the same */
-    max-width: 280px; /* Prevent scaling beyond the original size */
-    max-height: 280px; /* Prevent scaling beyond the original size */
-}
-/* TEXT STYLES */
+/* TEXT OUTSIDE CIRCLE */
 .artist-card h2 {
-    font-size: 18px; /* Adjust font size */
+    font-size: 18px;
     font-weight: 700;
     color: #FFDF05;
     text-transform: uppercase;
-    margin-top: 20px; /* Space between image and text */
+    margin-top: 15px; /* Push text outside the circle */
     opacity: 0.7;
 }
 
+/* Make text fully visible for active artist */
 .artist-card.active h2 {
     opacity: 1;
-    font-size: 20px;
-    color: #FFDF05;
-    margin-top: 40px; /* Ensure enough space when zooming */
+    font-size: 22px;
+    margin-top: 20px;
 }

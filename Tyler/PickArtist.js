@@ -3,13 +3,14 @@ const artistCards = document.querySelectorAll(".artist-card");
 
 let isDragging = false, startX, scrollLeft;
 
-// Start the carousel on the first artist (SZA)
+// Center the first artist on load
 window.onload = function() {
-    const firstArtist = artistCards[0]; // Select first artist (SZA)
-    carousel.scrollLeft = firstArtist.offsetLeft - (window.innerWidth / 2 - firstArtist.clientWidth / 2);
+    const firstArtist = artistCards[0]; 
+    const firstArtistOffset = firstArtist.offsetLeft - (carousel.clientWidth / 2 - firstArtist.clientWidth / 2);
+    carousel.scrollLeft = firstArtistOffset;
 };
 
-/* Dragging functionality */
+// Dragging functionality
 carousel.addEventListener("mousedown", (e) => {
     isDragging = true;
     startX = e.pageX - carousel.offsetLeft;
@@ -31,21 +32,23 @@ carousel.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - carousel.offsetLeft;
-    const walk = (x - startX) * 2; // Adjust scroll speed
+    const walk = (x - startX) * 2;
     carousel.scrollLeft = scrollLeft - walk;
 });
 
-/* Prevent scrolling too far left or right */
+// Click-to-center functionality
+artistCards.forEach(card => {
+    card.addEventListener("click", () => {
+        const cardOffset = card.offsetLeft - (carousel.clientWidth / 2 - card.clientWidth / 2);
+        carousel.scrollLeft = cardOffset;
+
+        artistCards.forEach(c => c.classList.remove("active"));
+        card.classList.add("active");
+    });
+});
+
+// Auto-center functionality on scroll
 carousel.addEventListener("scroll", () => {
-    const maxScroll = carousel.scrollWidth - carousel.clientWidth; // Max scroll position
-
-    if (carousel.scrollLeft <= 0) {
-        carousel.scrollLeft = 0; // Prevent scrolling before first artist
-    }
-    if (carousel.scrollLeft >= maxScroll) {
-        carousel.scrollLeft = maxScroll; // Prevent scrolling after last artist
-    }
-
     let closest = null;
     let minDistance = Infinity;
 

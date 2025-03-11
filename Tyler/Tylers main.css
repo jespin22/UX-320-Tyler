@@ -15,6 +15,7 @@ body {
     color: #bc2025;
     text-align: center;
     padding-top: 60px; /* Prevents content from being hidden behind header */
+    padding-bottom: 100px; /* Adds space at the bottom of the page */
     overflow-x: hidden;
 }
 
@@ -27,8 +28,8 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    
 }
+
 /* Navigation bar - spacing */
 nav {
     display: flex;
@@ -37,6 +38,7 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 /* Navigation bar - font */
 .nav-item {
     color: white;
@@ -46,6 +48,7 @@ nav {
     text-transform: uppercase;
     margin: 0 30px; /* Spacing between items */
 }
+
 /* Navigation bar - hover */
 .nav-item:hover {
     text-decoration: underline; 
@@ -60,10 +63,11 @@ nav {
 /* Apply Inter font to paragraph */
 p {
     font-family: 'Inter', sans-serif;
-    font-weight: 450; /* You can adjust the weight (400, 500, 600, etc.) */
+    font-weight: 450;
     font-size: 16px;
     line-height: 1.6;
     color: #000000;
+    margin-bottom: 40px; /* Adds space between paragraph and CTA button */
 }
 
 /* Container for the hero image */
@@ -71,6 +75,7 @@ p {
     max-width: 900px; /* Match the max width of the paragraph */
     margin: 60px auto 20px; /* Center the image and give some space below */
 }
+
 /* Styling for the hero image */
 .tyler-image {
     width: 100%; /* Make the image take up full width of its container */
@@ -83,9 +88,9 @@ p {
     max-width: 900px; /* Match header width */
     margin: 20px auto; /* Center it */
     padding: 0 20px; /* Match nav padding */
-    text-align: left; 
-
+    text-align: left;
 }
+
 /* Align text-to-speech icon with paragraph */
 .bio-container {
     display: flex;
@@ -94,6 +99,7 @@ p {
     max-width: 900px;
     margin: 0 auto; /* Centers the content */
 }
+
 /* Text-to-speech icon */
 #speech-icon {
     width: 30px;
@@ -102,32 +108,37 @@ p {
     transition: transform 0.2s ease-in-out;
     margin-bottom: 5px; /* Creates space between the icon and paragraph */
 }
+
 /* When active, swap the image */
 #speech-icon.active img {
     content: url("Images/text-to-speech-black.png");
 }
+
 #speech-icon img {
-    width: 100%; /* Forces both images to match the container */
-    height: auto; /* Maintains aspect ratio */
-    object-fit: contain; /* Ensures no weird cropping */
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
+
 /* Paragraph settings */
 #tyler-bio {
-    flex: 1; /* Allows paragraph to fill available space */
+    flex: 1;
     text-align: left;
     font-size: 16px;
     line-height: 1.6;
     color: #333;
+    margin-bottom: 60px; /* Ensures space before CTA button */
 }
 
 /* Change "Learn More" default text and when hovering */
 .learn-more {
     color: #000000; 
-    text-decoration: none; /* No underline */
+    text-decoration: none;
     cursor: pointer;
 }
+
 .learn-more:hover {
-    text-decoration: underline; /* Add underline on hover */
+    text-decoration: underline;
 }
 
 /* Get Started button */
@@ -144,12 +155,13 @@ p {
     border-radius: 80px;
     transition: background 0.3s ease-in-out;
     display: block;  
-    margin-left: auto;  /* Centers horizontally */
-    margin-right: auto; /* Centers horizontally */
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* CTA button */
 .cta {
-    background:#bc2025;
+    background: #bc2025;
     color: white;
     padding: 16px 40px;
     font-size: 18px;
@@ -158,11 +170,11 @@ p {
     border-radius: 30px;
     border: none;
     text-decoration: none;
-    margin-top: 100px;
-    margin-bottom: 50px;
+    margin-top: 50px; /* Adds space above the CTA */
+    margin-bottom: 80px; /* Adds space below the CTA */
 }
 
-
+/* CTA button hover effect */
 .cta:hover {
     background-color: #000000;
 }
@@ -170,4 +182,4 @@ p {
 /* Keyboard nav - accessibility */
 a:focus, button:focus {
     outline: 3px solid #4d90fe;
-  }
+}
