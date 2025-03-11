@@ -66,7 +66,7 @@ nav {
 .title {
     font-size: 28px;
     font-weight: 700;
-    color: yellow;
+    color: #FFDF05;
     letter-spacing: 2px;
     margin-top: 100px;
 }
@@ -77,77 +77,88 @@ nav {
     margin-top: 10px;
 }
 
-/* CAROUSEL */
+/* CAROUSEL WRAPPER */
 .carousel-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh; /* Increase height to avoid clipping */
-    overflow: hidden;
+    padding: 40px 0; /* Vertical padding for spacing around the cards */
+    overflow: visible;  /* Allow content to overflow without clipping */
     position: relative;
-    margin-top: 50px; /* Adjust spacing */
+    width: 100%; /* Ensure full width of the container */
+    height: auto; /* Let it expand based on content */
 }
 
+/* CAROUSEL */
 .carousel {
     display: flex;
     align-items: center;
-    gap: 80px;
+    gap: 60px; /* Adjust gap between cards */
     overflow-x: auto;
     scroll-behavior: smooth;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding: 0 15%;
-}
-
-.carousel::-webkit-scrollbar {
-    display: none;
+    width: auto; /* Allow carousel width to expand naturally */
+    padding: 0 10%; /* Horizontal padding for spacing around the carousel */
 }
 
 /* ARTIST CARDS */
 .artist-card {
     flex: 0 0 auto;
-    width: 200px; /* Increase size */
-    height: 200px; /* Ensure proper proportions */
-    border-radius: 50%;
+    width: 280px; /* Set width for the artist cards */
+    height: 280px; /* Set height for the artist cards */
+    border-radius: 50%; /* Make the card circular */
     cursor: grab;
     user-select: none;
     text-align: center;
     opacity: 0.3;
-    transform: scale(0.8);
+    transform: none; /* Keep them at normal size */
     transition: transform 0.4s, opacity 0.4s;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Center content */
+    justify-content: center;
+    overflow: hidden; /* Prevent the card from overflowing */
 }
 
 .artist-card img {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 50%; /* Ensure image is circular */
+    object-fit: cover; /* Preserve aspect ratio and cover the entire circle */
     display: block;
-}
-
-/* Ensure artist name is properly aligned */
-.artist-card h2 {
-    font-size: 16px;
-    font-weight: 700;
-    color: yellow;
-    text-transform: uppercase;
-    margin-top: 10px;
-    opacity: 0.5;
 }
 
 /* ACTIVE ARTIST (Centered One) */
 .artist-card.active {
     opacity: 1;
-    transform: scale(1.2);
+    transform: scale(1.1); /* Slightly scale the active card */
+}
+
+.artist-card.active img {
+    transform: none; /* Prevent image from scaling */
+}
+
+.artist-card.active {
+    width: 280px; /* Keep the card size the same */
+    height: 280px; /* Keep the card size the same */
+    max-width: 280px; /* Prevent scaling beyond the original size */
+    max-height: 280px; /* Prevent scaling beyond the original size */
+}
+/* TEXT STYLES */
+.artist-card h2 {
+    font-size: 18px; /* Adjust font size */
+    font-weight: 700;
+    color: #FFDF05;
+    text-transform: uppercase;
+    margin-top: 20px; /* Space between image and text */
+    opacity: 0.7;
 }
 
 .artist-card.active h2 {
     opacity: 1;
-    font-size: 18px;
-    color: yellow;
+    font-size: 20px;
+    color: #FFDF05;
+    margin-top: 40px; /* Ensure enough space when zooming */
 }

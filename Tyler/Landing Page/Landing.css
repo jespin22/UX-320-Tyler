@@ -177,24 +177,3 @@ nav {
     display: block;
 }
 
-/* ==================== HOW IT WORKS SECTION ==================== */
-.how-it-works {
-    text-align: center;
-    background-color: black; /* Matches theme */
-    padding: 50px 20px; /* Adjust spacing */
-}
-
-.how-it-works h2 {
-    font-size: 50px; /* Adjust for size */
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #FFDF05; /* Yellow text like the image */
-    letter-spacing: 3px; /* Adds spacing for style */
-}
-
-.how-it-works p {
-    font-size: 20px;
-    color: white; /* White text */
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
