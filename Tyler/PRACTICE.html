@@ -66,11 +66,46 @@
         }
 
         /* Title Image */
-        .title-image {
-            width: 70%;
-            max-width: 450px;
-            margin: 30px 0;
+     /* Title Section (Triangle + Title in a Row) */
+        .title-container {
+            display: flex; /* Keeps triangle and title in a row */
+            align-items: center;
+            justify-content: center;
+            gap: 50px; /* Spacing between triangle and title */
+            margin: 50px auto 20px; /* Adjusted margin for spacing */
         }
+
+        /* Triangle Icon */
+        .title-icon {
+            width: 50px; /* Adjust size if needed */
+            height: auto;
+        }
+
+        /* Main Title */
+        .title {
+            font-family: 'AnzaHeader', sans-serif;
+            font-size: 80px;
+            font-weight: normal;
+            color: #BC2025;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            line-height: 1.1;
+        }
+
+        /* Subtitle (Centered Below the Title) */
+        .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            color: #BC2025;
+            text-transform: uppercase;
+            max-width: 600px; /* Prevents it from being too wide */
+            line-height: 1.3;
+            text-align: center; /* Ensures subtitle stays centered */
+            margin: 0 auto 60px; /* Centers it on the page */
+            display: block; /* Ensures it takes its own line */
+        }
+
 
         /* Album Navigation */
         .album-section {
@@ -193,12 +228,14 @@
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
-            border-radius: 30px;
+            border-radius: 60px;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 50px; /* Ensures proper vertical centering */
+            height: 70px; /* Ensures proper vertical centering */
+            margin-top: 30px;
+            margin-bottom: 50px;
         }
 
         .back-button {
@@ -225,8 +262,12 @@
     </header>
 
     <main>
-        <img src="./Images/Setlist Page/Title Setlist.png" alt="Curate the Setlist" class="title-image">
-
+        <div class="title-container">
+            <img src="Images/Setlist Page/Triangle.png" alt="Triangle" class="title-icon">
+             <h1 class="title">Curate The Setlist</h1>
+        </div>
+        <h2 class="subtitle">Browse the artist's discography, select songs, and type out your custom setlist.</h2>
+        
         <div class="album-section">
             <button class="nav-arrow left" onclick="prevAlbum()">&#9664;</button>
 
@@ -257,8 +298,8 @@
     </main>
 
     <script>
-        let albumIndex = 0;
-        const albums = [
+       let albumIndex = 0;
+const albums = [
     {
         cover: "./Images/Setlist Page/Setlist 1 Album = Chroma.png", 
         songs: "./Images/Setlist Page/Setlist 1 Songs = Chroma.png", 
@@ -280,15 +321,20 @@
      }
 ];
 
-        function updateAlbumDisplay() {
-            document.getElementById("mainAlbumCard").classList.remove("flipped");
-            document.getElementById("mainAlbum").src = albums[albumIndex].cover;
-            document.getElementById("mainSongs").src = albums[albumIndex].songs;
-        }
+function updateAlbumDisplay() {
+    document.getElementById("mainAlbumCard").classList.remove("flipped");
+    document.getElementById("mainAlbum").src = albums[albumIndex].cover;
+    document.getElementById("mainSongs").src = albums[albumIndex].songs;
 
-        function prevAlbum() { albumIndex = (albumIndex - 1 + albums.length) % albums.length; updateAlbumDisplay(); }
-        function nextAlbum() { albumIndex = (albumIndex + 1) % albums.length; updateAlbumDisplay(); }
-        function flipCard() { document.getElementById("mainAlbumCard").classList.toggle("flipped"); }
+    document.getElementById("leftAlbum").src = albums[(albumIndex - 1 + albums.length) % albums.length].cover;
+    document.getElementById("rightAlbum").src = albums[(albumIndex + 1) % albums.length].cover;
+}
+
+function prevAlbum() { albumIndex = (albumIndex - 1 + albums.length) % albums.length; updateAlbumDisplay(); }
+function nextAlbum() { albumIndex = (albumIndex + 1) % albums.length; updateAlbumDisplay(); }
+function flipCard() { document.getElementById("mainAlbumCard").classList.toggle("flipped"); }
+
+
 
         let setlistBox = document.getElementById("setlist-box");
         let placeholder = document.getElementById("setlist-placeholder");

@@ -34,6 +34,7 @@ function prevAlbum() { albumIndex = (albumIndex - 1 + albums.length) % albums.le
 function nextAlbum() { albumIndex = (albumIndex + 1) % albums.length; updateAlbumDisplay(); }
 function flipCard() { document.getElementById("mainAlbumCard").classList.toggle("flipped"); }
 
+
 function hidePlaceholder() { 
     document.getElementById("setlist-placeholder").style.opacity = "0"; 
 }
