@@ -21,7 +21,7 @@ body {
 
 /* Navigation bar - bg */
 header {
-    background-color: black;
+    background-color: #101010;
     padding: 15px 20px;
     position: fixed;
     top: 0;
