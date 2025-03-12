@@ -6,6 +6,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'DelRay';
+    src: url('Fonts/DelRay-subtitle.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Apply Inter to the whole page */
 body {
     font-family: 'Inter', sans-serif;
@@ -29,6 +36,15 @@ body {
     letter-spacing: 10px; /* Increased letter-spacing */
     line-height: 1.1; /* Added line-height to prevent squishing */
     padding-top: 100px; /* Added padding to provide space between nav and title */
+}
+
+.subtitle {
+    font-family: 'DelRay', sans-serif;
+    font-size: 50px; /* Adjusted font size */
+    font-weight: normal; /* Removed bold */
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1.1; /* Added line-height to prevent squishing */
 }
 
 /* Global Reset */
