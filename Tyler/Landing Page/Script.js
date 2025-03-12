@@ -1,24 +1,25 @@
-// List of artist images for the slideshow
-const artistImages = [
-    "Landing Page/Landing Images/CTRL THE  (artsist) /Property 1=SZA.png",
-    "Landing Page/Landing Images/CTRL THE  (artsist) /Property 2=TYLER.png",
-    "Landing Page/Landing Images/CTRL THE  (artsist) /Property 3=DOECHII.png"
-];
+// Get all the image elements in the hero section
+const artistImages = document.querySelectorAll('.artist-slide');
 
-// Keep track of the current image
-let currentArtistIndex = 0;
+// Initialize the current image index
+let currentImageIndex = 0;
 
-// Get the image element in the hero section
-const artistImageElement = document.getElementById("artistSlideshow");
-
-// Function to update the image every 3 seconds
+// Function to update the image
 function updateArtistImage() {
-    currentArtistIndex = (currentArtistIndex + 1) % artistImages.length; 
-    artistImageElement.src = artistImages[currentArtistIndex]; 
+    // Hide all images
+    artistImages.forEach(image => {
+        image.classList.remove('active');
+    });
 
-    // Debugging: Check current image
-    console.log("Current Image: ", artistImageElement.src);
+    // Show the current image
+    artistImages[currentImageIndex].classList.add('active');
+
+    // Update the image index for the next cycle
+    currentImageIndex = (currentImageIndex + 1) % artistImages.length;
 }
 
-// Automatically change the image every 3 seconds
+// Set an interval to change the image every 3 seconds (3000 milliseconds)
 setInterval(updateArtistImage, 3000);
+
+// Initially show the first image
+updateArtistImage();

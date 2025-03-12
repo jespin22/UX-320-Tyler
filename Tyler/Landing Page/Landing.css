@@ -1,11 +1,26 @@
+/* Import custom font */
+@font-face {
+    font-family: 'AnzaHeader';
+    src: url('Fonts/Anza-header.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DelRay';
+    src: url('../Fonts/DelRay-subtitle.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: #101010;
     color: white;
-    font-family: 'Arial', sans-serif; /* ADD! the Anza font */
+    font-family: 'Inter', sans-serif; 
     text-align: center;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    padding-top: 60px; /* Prevent content from being hidden behind header */
 }
 
 /* Navigation bar - bg */
@@ -17,14 +32,6 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    
-}
-
-/* Prevents content from being hidden behind header */
-body{
-    margin: 0;
-    padding-top: 60px;
-    overflow-x: hidden;
 }
 /* Navigation bar - spacing */
 nav {
@@ -44,7 +51,6 @@ nav {
     margin: 0 20px; /* Spacing between items */
     margin-right: 60px;
 }
-
 /* Logo - size */
 .logo {
     width: 30px; 
@@ -60,31 +66,46 @@ nav {
     height: 100vh;
     padding-top: 20px;
 }
-
 .slideshow-container {
-    max-width: 1000px; /*keep this above 1k to fill the page*/
-    height: auto;
+    max-width: 100%;
+    height: 1000px;
     position: relative;
+    overflow: hidden;
 }
-
 .artist-slide {
     width: 100%;
+    height: 100%;
+    display: none; /* Hide all images initially */
+    object-fit: contain;
     transition: opacity 1s ease-in-out;
 }
-
-.scroll-arrow {
-    width: 40px;
-    margin-top: 20px;
-    margin-bottom: 80px; /* added this margin so doesn't appear to hint to click the CTA */ 
-    cursor: pointer;
-    animation: bounce 1.5s infinite; /* this makes the arrow bounce with keyframes */ 
+.artist-slide.active {
+    display: block; /* Show the active image */
 }
 
-@keyframes bounce { /* this finishes the bounce effect  */ 
+/* Scroll Text and Arrow */
+.scroll-arrow {
+    width: 40px;
+    margin-top: 5px;
+    margin-bottom: 80px;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+}
+.scroll-text {
+    color: white;
+    font-size: 12px; /* Adjust the size of the "Scroll" text */
+    font-weight: bold;
+    margin-bottom: 0px; /* Space between the "Scroll" text and the arrow */
+    text-transform: uppercase;
+    font-family: 'DelRay', sans-serif; /* Apply the DelRay font to the "scroll" text */
+    animation: bounce 1.5s infinite; /* Add bounce animation to the "scroll" text */
+}
+@keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(10px); }
 }
 
+/* Build the Experience Button */
 .cta {
     background-color: #FE7A2D;
     color: white;
@@ -99,46 +120,49 @@ nav {
     text-decoration: none;
     transition: background 0.3s ease-in-out;
 }
-
 .cta:hover {
     background-color: #E63A3F;
 }
 
 /* ==================== ABOUT SECTION ==================== */
 .about {
-    padding: 150px 20px; 
+    padding: 10px 20px; 
 }
-
 .bio-image {
     width: 80%;
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     display: block;
+    margin-bottom: 50px;
 }
+
 /*how it works*/
 .how-it-works {
     text-align: center;
-    margin-bottom: 150px;
+    margin-bottom: 0px;
     background-color: #101010;
-
+    padding-bottom: 50px; /* Remove any extra padding from the how-it-works section */
+    padding-top: 50px;
 }
-
 .how-it-works-title {
     font-family: "Anza", sans-serif;
-    font-size: 50px;
+    font-size: 60px;
     font-weight: normal;
     color: #FFDF05;
     text-transform: uppercase;
     letter-spacing: 5px;
-    font-weight: normal;
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
 }
-
 .how-it-works-subtitle {
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    font-weight: normal;
-    color: white;
+    font-family: 'DelRay', sans-serif;
+    font-size: 15px; /* Adjusted font size */
+    font-weight: normal; /* Removed bold */
+    color: #ffffff;
     text-transform: uppercase;
+    line-height: 1.1; /* Added line-height to prevent squishing */
+    padding: 10px;  /* Remove padding completely */
+    margin: 0;   /* Remove margin completely */
 }
 
 /* ==================== ARTIST CAROUSEL ==================== */
@@ -147,18 +171,16 @@ nav {
     overflow: hidden;
     position: relative;
 }
-
 .carousel-track {
     display: flex;
     gap: 150px;
     animation: slide 12s linear infinite;
 }
-
 .carousel-track img {
     width: 225px;
     height: 225px;
+    object-fit: cover;
 }
-
 @keyframes slide {
     0% { transform: translateX(0); }
     100% { transform: translateX(-45%); }
@@ -167,12 +189,17 @@ nav {
 /* ==================== STEPS SECTION ==================== */
 .steps {
     padding: 80px 20px;
+    text-align: center; /* Ensures the content is centered */
 }
-
 .steps-image {
     width: 100%;
     max-width: 1200px;
     min-width: 300px;
-    margin: auto;
+    margin: -200px auto 10px auto; /* Center the image and add space below */
     display: block;
+}
+/* Artist carousel */
+.artist-carousel {
+    padding-top: 0; /* Removes top padding */
+    padding-bottom: 0; /* Removes bottom padding */
 }
