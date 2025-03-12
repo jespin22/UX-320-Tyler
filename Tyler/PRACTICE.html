@@ -249,6 +249,19 @@
             color: white;
             border: none;
         }
+        
+        /* Hover Effect - Change to Black */
+        .back-button:hover {
+            background: transparent;
+            color: black;
+            border: 4px solid black; /* Changes outline to black */
+        }
+
+        .next-button:hover {
+            background: black;
+            color: white;
+        }
+        
     </style>
 </head>
 <body>
@@ -266,7 +279,7 @@
             <img src="Images/Setlist Page/Triangle.png" alt="Triangle" class="title-icon">
              <h1 class="title">Curate The Setlist</h1>
         </div>
-        <h2 class="subtitle">Browse the artist's discography, select songs, and type out your custom setlist.</h2>
+        <h2 class="subtitle">Navigate through the artist's discography, flip albums to view tracklists, and type out your perfect setlist.</h2>
         
         <div class="album-section">
             <button class="nav-arrow left" onclick="prevAlbum()">&#9664;</button>
@@ -288,11 +301,11 @@
         </div>
 
         <div class="setlist-box" id="setlist-box" contenteditable="true">
-            <p id="setlist-placeholder" class="setlist-placeholder">TYPE SETLIST HERE...</p>
+            <p id="setlist-placeholder" class="setlist-placeholder">TYPE YOUR ULTIMATE SETLIST HERE...</p>
         </div>
 
         <div class="navigation-buttons">
-            <a href="Tyler/Tyler Main Page.html" class="back-button">BACK</a>
+            <a href="Tyler Main Page.html" class="back-button">BACK</a>
             <a href="Pick the Perfect Fit.html" class="next-button">NEXT STEP</a>  
         </div>
     </main>
