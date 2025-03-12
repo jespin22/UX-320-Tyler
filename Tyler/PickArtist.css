@@ -200,3 +200,23 @@ nav {
         padding-top: 40px; /* Further adjust padding for very small screens */
     }
 }
+/* CTA BUTTON STYLES */
+.cta {
+    background-color: #FE7A2D;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.cta:hover {
+    background-color: #E63A3F;
+}
