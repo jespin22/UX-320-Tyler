@@ -129,14 +129,14 @@ nav {
 /* ACTIVE ARTIST - Enlarges smoothly and stays at full opacity */
 .artist-card.active {
     opacity: 1 !important;
-    transform: scale(1.05);
+    transform: scale(1.00);
 }
 
 /* Active artist image enlarges */
 .artist-card.active img {
     width: 210px;
     height: 210px;
-    transform: scale(1.1);
+    transform: scale(1.00);
 }
 
 /* TEXT UNDER ARTIST */
