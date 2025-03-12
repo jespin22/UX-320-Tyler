@@ -3,18 +3,21 @@ const albums = [
     {
         cover: "./Images/Setlist Page/Setlist 1 Album = Chroma.png", 
         songs: "./Images/Setlist Page/Setlist 1 Songs = Chroma.png", 
-        alt:"Album covers for Tyler, The Creator's Chromakopia"
+        altCover:"Album covers for Tyler, The Creator's Chromakopia",
+        altSong:"Album tracklist for Tyler, The Creator's Chromakopia"
     },
     { 
         cover: "./Images/Setlist Page/Setlist 2 Album = CMIYG .png", 
         songs: "./Images/Setlist Page/Setlist 2 Songs = CMIYG.png",
-        alt:"Album covers for Tyler, The Creator's Call Me If You Get Lost"
+        altCover:"Album covers for Tyler, The Creator's Call Me If You Get Lost",
+        altSong:"Album tracklist for Tyler, The Creator's Call Me If You Get Lost"
     },
 
     { 
         cover: "./Images/Setlist Page/Setlist 3 Album = IGOR.png", 
         songs: "./Images/Setlist Page/Setlist 3 Songs = IGOR.png",
-        alt:"Album covers for Tyler, The Creator's IGOR"
+        altCover:"Album covers for Tyler, The Creator's IGOR",
+        altSong:"Album tracklist for Tyler, The Creator's IGOR"
      }
 ];
 

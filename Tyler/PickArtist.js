@@ -3,11 +3,28 @@ const artistCards = document.querySelectorAll(".artist-card");
 
 let isDragging = false, startX, scrollLeft;
 
+// Function to center an artist and update opacity
+function centerArtist(card) {
+    if (!card) return;
+
+    // Center the selected artist
+    const cardOffset = card.offsetLeft - (carousel.clientWidth / 2 - card.clientWidth / 2);
+    carousel.scrollTo({ left: cardOffset, behavior: "smooth" });
+
+    // Remove 'active' class from all and reset opacity
+    artistCards.forEach(c => {
+        c.classList.remove("active");
+        c.style.opacity = "0.3"; // Dim other artists
+    });
+
+    // Set active class and full opacity for clicked card
+    card.classList.add("active");
+    card.style.opacity = "1";
+}
+
 // Center the first artist on load
-window.onload = function() {
-    const firstArtist = artistCards[0]; 
-    const firstArtistOffset = firstArtist.offsetLeft - (carousel.clientWidth / 2 - firstArtist.clientWidth / 2);
-    carousel.scrollLeft = firstArtistOffset;
+window.onload = function () {
+    centerArtist(artistCards[0]);
 };
 
 // Dragging functionality
@@ -38,30 +55,33 @@ carousel.addEventListener("mousemove", (e) => {
 
 // Click-to-center functionality
 artistCards.forEach(card => {
-    card.addEventListener("click", () => {
-        const cardOffset = card.offsetLeft - (carousel.clientWidth / 2 - card.clientWidth / 2);
-        carousel.scrollLeft = cardOffset;
-
-        artistCards.forEach(c => c.classList.remove("active"));
-        card.classList.add("active");
-    });
+    card.addEventListener("click", () => centerArtist(card));
 });
 
-// Auto-center functionality on scroll
+// Auto-center functionality on scroll (throttled for performance)
+let scrollTimeout;
 carousel.addEventListener("scroll", () => {
-    let closest = null;
-    let minDistance = Infinity;
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        let closest = null;
+        let minDistance = Infinity;
 
-    artistCards.forEach((card) => {
-        const rect = card.getBoundingClientRect();
-        const distance = Math.abs(rect.left + rect.width / 2 - window.innerWidth / 2);
+        artistCards.forEach((card) => {
+            const rect = card.getBoundingClientRect();
+            const distance = Math.abs(rect.left + rect.width / 2 - window.innerWidth / 2);
 
-        if (distance < minDistance) {
-            minDistance = distance;
-            closest = card;
-        }
-    });
+            if (distance < minDistance) {
+                minDistance = distance;
+                closest = card;
+            }
+        });
 
-    artistCards.forEach(card => card.classList.remove("active"));
-    if (closest) closest.classList.add("active");
+        centerArtist(closest);
+    }, 100);
+});
+
+// Recenter when window resizes
+window.addEventListener("resize", () => {
+    const activeCard = document.querySelector(".artist-card.active");
+    centerArtist(activeCard || artistCards[0]);
 });
