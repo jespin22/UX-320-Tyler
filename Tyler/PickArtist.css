@@ -64,7 +64,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navigation Bar */
+/* Navigation bar - bg */
 header {
     background-color: black;
     padding: 15px 20px;
@@ -74,7 +74,7 @@ header {
     width: 100%;
     z-index: 1000;
 }
-
+/* Navigation bar - spacing */
 nav {
     display: flex;
     justify-content: space-between; 
@@ -82,20 +82,17 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
 }
-
+/* Navigation bar - font */
 .nav-item {
     color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 0 30px;
+    margin: 0 20px; /* Spacing between items */
+    margin-right: 60px;
 }
-
-.nav-item:hover {
-    text-decoration: underline; 
-}
-
+/* Logo - size */
 .logo {
     width: 30px; 
     height: 30px;
