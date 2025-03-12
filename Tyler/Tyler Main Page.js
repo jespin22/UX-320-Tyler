@@ -1,3 +1,4 @@
+/* ==================== TEXT-TO-SPEECH ==================== */
 document.addEventListener("DOMContentLoaded", function () {
     const speechIcon = document.getElementById("speech-icon");
     const tylerBio = document.getElementById("tyler-bio").innerText;
@@ -29,4 +30,22 @@ document.addEventListener("DOMContentLoaded", function () {
             isSpeaking = false;
         }
     });
+});
+
+/* ==================== LEARN MORE LINK ==================== */
+const learnMoreLink = document.getElementById('learn-more-link');
+const moreText = document.getElementById('more-text');
+
+// Show text when hovering
+learnMoreLink.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default anchor link behavior
+
+    // Show additional text
+    if (moreText.style.display === 'none' || moreText.style.display === '') {
+        moreText.style.display = 'inline'; // Show more text
+        learnMoreLink.textContent = 'Show Less...'; // Change link text to "Show Less..."
+    } else {
+        moreText.style.display = 'none'; // Hide additional text
+        learnMoreLink.textContent = 'Read More...'; // Change link text back to "Learn More..."
+    }
 });

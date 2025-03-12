@@ -1,4 +1,4 @@
-/* Import custom font */
+/* ==================== IMPORT CUSTOM FONTS ==================== */
 @font-face {
     font-family: 'AnzaHeader';
     src: url('Fonts/Anza-header.otf') format('opentype');
@@ -11,7 +11,7 @@
     font-weight: normal;
     font-style: normal;
 }
-
+/* ==================== BACKGROUND ==================== */
 body {
     background-color: #101010;
     color: white;
@@ -23,7 +23,7 @@ body {
     padding-top: 60px; /* Prevent content from being hidden behind header */
 }
 
-/* Navigation bar - bg */
+/* ==================== NAVIGATION ==================== */
 header {
     background-color: #101010;
     padding: 15px 20px;
@@ -33,7 +33,7 @@ header {
     width: 100%;
     z-index: 1000;
 }
-/* Navigation bar - spacing */
+/* Spacing */
 nav {
     display: flex;
     justify-content: space-between; 
@@ -41,7 +41,7 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
 }
-/* Navigation bar - font */
+/* Font */
 .nav-item {
     color: white;
     text-decoration: none;
@@ -50,14 +50,17 @@ nav {
     text-transform: uppercase;
     margin: 0 20px; /* Spacing between items */
     margin-right: 60px;
+    font-family: 'DelRay', sans-serif;
 }
-/* Logo - size */
 .logo {
     width: 30px; 
     height: 30px;
 }
+.nav-item:hover {
+    color: #E63A3F;
+}
 
-/*  HERO SECTION (slideshow)  */
+/* ==================== HERO SECTION SLIDESHOW ==================== */
 .hero {
     display: flex;
     flex-direction: column;
@@ -84,17 +87,16 @@ nav {
     display: block; /* Show the active image */
 }
 
-/* Scroll arrow bouncing */
+/* ==================== SCROLL ARROW AND TEXT ==================== */
 .scroll-arrow {
     animation: bounce 1.5s ease-in-out infinite;
     display: block;
     margin: 0 auto; /* Center horizontally */
-    position: relative; /* Ensure it can be moved with translateY */
+    position: relative; 
 }
-
 /* Scroll Text (stationary) */
 .scroll-text {
-    font-family: 'DelRay', sans-serif; /* Or your desired font */
+    font-family: 'DelRay', sans-serif; 
     font-size: 12px;
     color: white;
     text-transform: uppercase;
@@ -102,32 +104,12 @@ nav {
     margin-top: 10px; /* Adjusts spacing between text and arrow */
     margin-bottom: 0px;
 }
-
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(10px); }
 }
 
-/* Build the Experience Button */
-.cta {
-    background-color: #FE7A2D;
-    color: white;
-    border: none;
-    padding: 30px 40px;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 30px;
-    border-radius: 80px;
-    text-decoration: none;
-    transition: background 0.3s ease-in-out;
-}
-.cta:hover {
-    background-color: #E63A3F;
-}
-
-/* ==================== ABOUT SECTION ==================== */
+/* ==================== BIO/ABOUT ==================== */
 .about {
     padding: 10px 20px; 
 }
@@ -140,7 +122,7 @@ nav {
     margin-top: 50px;
 }
 
-/*how it works*/
+/* ==================== HOW IT WORKS ==================== */
 .how-it-works {
     text-align: center;
     margin-bottom: 0px;
@@ -160,13 +142,13 @@ nav {
 }
 .how-it-works-subtitle {
     font-family: 'DelRay', sans-serif;
-    font-size: 15px; /* Adjusted font size */
+    font-size: 15px;
     font-weight: normal; /* Removed bold */
     color: #ffffff;
     text-transform: uppercase;
     line-height: 1.1; /* Added line-height to prevent squishing */
-    padding: 10px;  /* Remove padding completely */
-    margin: 0;   /* Remove margin completely */
+    padding: 10px;  
+    margin: 0;   
 }
 
 /* ==================== ARTIST CAROUSEL ==================== */
@@ -189,8 +171,13 @@ nav {
     0% { transform: translateX(0); }
     100% { transform: translateX(-45%); }
 }
+/* Artist carousel */
+.artist-carousel {
+    padding-top: 0; /* Removes top padding */
+    padding-bottom: 0; /* Removes bottom padding */
+}
 
-/* ==================== STEPS SECTION ==================== */
+/* ==================== HOW IT WORKS - STEPS ==================== */
 .steps {
     padding: 80px 20px;
     text-align: center; /* Ensures the content is centered */
@@ -202,8 +189,27 @@ nav {
     margin: -200px auto 10px auto; /* Center the image and add space below */
     display: block;
 }
-/* Artist carousel */
-.artist-carousel {
-    padding-top: 0; /* Removes top padding */
-    padding-bottom: 0; /* Removes bottom padding */
+
+/* ==================== BUILD THE EXPERIENCE BUTTON ==================== */
+.cta {
+    background-color: #FE7A2D;
+    color: white;
+    border: none;
+    padding: 30px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 80px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+.cta:hover {
+    background-color: #bc2025;
+}
+
+/* ==================== KEYBOARD ACCESSIBILITY ==================== */
+a:focus, button:focus {
+    outline: 3px solid #4d90fe;
 }

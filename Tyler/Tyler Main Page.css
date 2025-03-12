@@ -1,12 +1,18 @@
-/* Import custom font */
+/* ==================== IMPORT CUSTOM FONTS ==================== */
 @font-face {
     font-family: 'AnzaHeader';
     src: url('Fonts/Anza-header.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'DelRay';
+    src: url('Fonts/DelRay-subtitle.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
-/* Apply Inter to the whole page */
+/* ==================== BACKGROUND ==================== */
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -19,7 +25,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navigation bar - bg */
+/* ==================== NAVIGATION ==================== */
 header {
     background-color: #101010;
     padding: 15px 20px;
@@ -29,8 +35,7 @@ header {
     width: 100%;
     z-index: 1000;
 }
-
-/* Navigation bar - spacing */
+/* Spacing */
 nav {
     display: flex;
     justify-content: space-between; 
@@ -38,52 +43,35 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-/* Navigation bar - font */
+/* Font */
 .nav-item {
     color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 0 30px; /* Spacing between items */
+    margin: 0 20px; /* Spacing between items */
+    margin-right: 60px;
+    font-family: 'DelRay', sans-serif;
 }
-
-/* Navigation bar - hover */
-.nav-item:hover {
-    text-decoration: underline; 
-}
-
-/* Logo */
 .logo {
     width: 30px; 
     height: 30px;
 }
-
-/* Apply Inter font to paragraph */
-p {
-    font-family: 'Inter', sans-serif;
-    font-weight: 450;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #000000;
-    margin-bottom: 40px; /* Adds space between paragraph and CTA button */
+.nav-item:hover {
+    color: #E63A3F;
 }
 
-/* Container for the hero image */
+/* ==================== HERO IMAGE ==================== */
 .hero-image-container {
     max-width: 900px; /* Match the max width of the paragraph */
     margin: 60px auto 20px; /* Center the image and give some space below */
 }
-
-/* Styling for the hero image */
 .tyler-image {
     width: 100%; /* Make the image take up full width of its container */
-    height: auto; /* Keep the aspect ratio */
-    object-fit: cover; /* Ensures the image covers the area without stretching */
+    height: auto; 
+    object-fit: cover; /* Doesn't stretch image */
 }
-
-/* Content container */
 .content {
     max-width: 900px; /* Match header width */
     margin: 20px auto; /* Center it */
@@ -91,6 +79,7 @@ p {
     text-align: left;
 }
 
+/* ==================== TEXT-TO-SPEECH ==================== */
 /* Align text-to-speech icon with paragraph */
 .bio-container {
     display: flex;
@@ -99,8 +88,6 @@ p {
     max-width: 900px;
     margin: 0 auto; /* Centers the content */
 }
-
-/* Text-to-speech icon */
 #speech-icon {
     width: 30px;
     height: 30px;
@@ -108,41 +95,45 @@ p {
     transition: transform 0.2s ease-in-out;
     margin-bottom: 5px; /* Creates space between the icon and paragraph */
 }
-
 /* When active, swap the image */
 #speech-icon.active img {
     content: url("Images/text-to-speech-black.png");
 }
-
 #speech-icon img {
     width: 100%;
     height: auto;
     object-fit: contain;
 }
-
+/* ==================== PARAGRAPH ==================== */
+p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #101010;
+    margin-bottom: 40px; /* Adds space between paragraph and CTA button */
+}
 /* Paragraph settings */
 #tyler-bio {
     flex: 1;
     text-align: left;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
+    color: #101010;
     margin-bottom: 60px; /* Ensures space before CTA button */
 }
 
-/* Change "Learn More" default text and when hovering */
+/* ==================== LEARN MORE ==================== */
 .learn-more {
-    color: #000000; 
+    color: #101010; 
     text-decoration: none;
     cursor: pointer;
+    font-weight: bold;
 }
-
 .learn-more:hover {
     text-decoration: underline;
 }
 
-/* Get Started button */
-.na {
+/* ==================== GET STARTED BUTTON ==================== */
+.cta {
     background-color: #bc2025;
     color: white;
     border: none;
@@ -153,33 +144,14 @@ p {
     cursor: pointer;
     margin-top: 30px;
     border-radius: 80px;
-    transition: background 0.3s ease-in-out;
-    display: block;  
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* CTA button */
-.cta {
-    background: #bc2025;
-    color: white;
-    padding: 16px 40px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 30px;
-    border: none;
     text-decoration: none;
-    margin-top: 50px; /* Adds space above the CTA */
-    margin-bottom: 80px; /* Adds space below the CTA */
+    transition: background 0.3s ease-in-out;
 }
-
-/* CTA button hover effect */
 .cta:hover {
-    background-color: #000000;
+    background-color: #101010;
 }
 
-/* Keyboard nav - accessibility */
+/* ==================== KEYBOARD ACCESSIBILITY ==================== */
 a:focus, button:focus {
     outline: 3px solid #4d90fe;
 }
