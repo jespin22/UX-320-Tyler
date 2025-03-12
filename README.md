@@ -21,9 +21,9 @@ Main Features:
 ## How-To Use
 Install Live Server:
 1. Install and open VS Code
-2. Type and install "Live Server" in Extensions panel
-3. Open "Tyler" folder in VS Code
-4. Click on chosen html file, right click on screen, and select "Open with Live Server"
+2. Install "Live Server" in Extensions panel
+3. Open "UX-320-Tyler" folder in VS Code
+4. Click on "Landing Page.html" file, right click on screen, and select "Open with Live Server"
 
 Page order:
 1. Landing Page
@@ -36,15 +36,9 @@ Page order:
 
 How to use CTRL: The Experience:
 1. Read through Landing page and click "Build the Experience" button
-2. Drag artist with mouse to move over to Tyler, The Creator and click on him
+2. Click on Tyler, The Creator and then the button
 3. Read his bio and click "Get Started" button
-4. Look through discography, type in your preferred songs, and click add
+4. Look through discography and type in your preferred songs
 5. View the key and select your favorite outfit combination
 6. View the key and select your favorite stage set combination
 7. View a summary of your curated performance/show
-
-## Libraries Used
-Swiper - for carousel
-https://swiperjs.com/get-started
-
-***NEED TO PUT THE HOW TO IF USING

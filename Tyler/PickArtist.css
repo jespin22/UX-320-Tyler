@@ -56,7 +56,7 @@ body {
 
 body {
     font-family: 'Inter', sans-serif;
-    background: black;
+    background: #101010;
     text-align: center;
     color: white;
     margin: 0;
@@ -64,7 +64,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navigation bar - bg */
+/* ==================== NAVIGATION ==================== */
 header {
     background-color: #101010;
     padding: 15px 20px;
@@ -74,7 +74,7 @@ header {
     width: 100%;
     z-index: 1000;
 }
-/* Navigation bar - spacing */
+/* Spacing */
 nav {
     display: flex;
     justify-content: space-between; 
@@ -82,7 +82,7 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
 }
-/* Navigation bar - font */
+/* Font */
 .nav-item {
     color: white;
     text-decoration: none;
@@ -91,11 +91,16 @@ nav {
     text-transform: uppercase;
     margin: 0 20px; /* Spacing between items */
     margin-right: 60px;
+    font-family: 'DelRay', sans-serif;
 }
-/* Logo - size */
+/* Logo */
 .logo {
     width: 30px; 
     height: 30px;
+}
+/* Hover color */
+.nav-item:hover {
+    color: #E63A3F;
 }
 
 /* Main Section */
@@ -213,23 +218,33 @@ nav {
         padding-top: 40px; /* Further adjust padding for very small screens */
     }
 }
-/* CTA BUTTON STYLES */
+
+/* Main container for the content */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-bottom: 50px;
+    padding-top: 0px;
+}
+/* Continue button */
 .cta {
     background-color: #FE7A2D;
     color: white;
     border: none;
-    padding: 20px 40px;
+    padding: 30px 40px;
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    margin-top: 40px;
-    border-radius: 50px;
+    margin-top: 50px ;
+    border-radius: 80px;
     text-decoration: none;
     transition: background 0.3s ease-in-out;
-    display: inline-block;
+}
+.cta:hover {
+    background-color: #bc2025;
 }
 
-.cta:hover {
-    background-color: #E63A3F;
-}
