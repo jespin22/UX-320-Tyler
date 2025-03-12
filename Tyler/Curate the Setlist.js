@@ -22,6 +22,7 @@ const albums = [
 ];
 
 function updateAlbumDisplay() {
+    document.getElementById("mainAlbumCard").classList.remove("flipped");
     document.getElementById("mainAlbum").src = albums[albumIndex].cover;
     document.getElementById("mainSongs").src = albums[albumIndex].songs;
 
