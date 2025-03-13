@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", function() {
+    updateAlbumDisplay();
+
+    // Setlist box functionality
+    let setlistBox = document.getElementById("setlist-box");
+    let placeholder = document.getElementById("setlist-placeholder");
+
+    setlistBox.addEventListener("focus", () => {
+        placeholder.style.display = "none";
+    });
+
+    setlistBox.addEventListener("blur", () => {
+        if (setlistBox.innerText.trim() === "") {
+            placeholder.style.display = "block";
+        }
+    });
+});
+
 let albumIndex = 0;
 const albums = [
     {
@@ -30,26 +48,16 @@ function updateAlbumDisplay() {
     document.getElementById("rightAlbum").src = albums[(albumIndex + 1) % albums.length].cover;
 }
 
-function prevAlbum() { albumIndex = (albumIndex - 1 + albums.length) % albums.length; updateAlbumDisplay(); }
-function nextAlbum() { albumIndex = (albumIndex + 1) % albums.length; updateAlbumDisplay(); }
-function flipCard() { document.getElementById("mainAlbumCard").classList.toggle("flipped"); }
-
-
-function hidePlaceholder() { 
-    document.getElementById("setlist-placeholder").style.opacity = "0"; 
+function prevAlbum() { 
+    albumIndex = (albumIndex - 1 + albums.length) % albums.length; 
+    updateAlbumDisplay(); 
 }
 
-function addSong() { 
-    let input = document.getElementById("songInput");
-    let setlistBox = document.getElementById("setlist-box");
-
-    if (input.value.trim() !== "") {
-        document.getElementById("setlist-placeholder").style.display = "none";
-        let songItem = document.createElement("p");
-        songItem.textContent = input.value;
-        setlistBox.appendChild(songItem);
-        input.value = "";
-    }
+function nextAlbum() { 
+    albumIndex = (albumIndex + 1) % albums.length; 
+    updateAlbumDisplay(); 
 }
 
-updateAlbumDisplay();
+function flipCard() { 
+    document.getElementById("mainAlbumCard").classList.toggle("flipped"); 
+}

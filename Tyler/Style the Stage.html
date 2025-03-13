@@ -4,248 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Style The Stage</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-             /* Import Custom Font */
-             @font-face {
-            font-family: 'AnzaHeader';
-            src: url('Fonts/Anza-header.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #FFDF05;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: black;
-            padding: 15px 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .nav-item {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-right: 60px;
-        }
-
-        .logo {
-            width: 30px;
-            height: 30px;
-        }
-
-        /* Title & Key Images */
-            /* Title Image */
-     /* Title Section (Triangle + Title in a Row) */
-     .title-container {
-            display: flex; /* Keeps triangle and title in a row */
-            align-items: center;
-            justify-content: center;
-            gap: 50px; /* Spacing between triangle and title */
-            margin: 50px auto 20px; /* Adjusted margin for spacing */
-        }
-
-        /* Triangle Icon */
-        .title-icon {
-            width: 50px; /* Adjust size if needed */
-            height: auto;
-        }
-
-        /* Main Title */
-        .title {
-            font-family: 'AnzaHeader', sans-serif;
-            font-size: 80px;
-            font-weight: normal;
-            color: #BC2025;
-            text-transform: uppercase;
-            letter-spacing: 10px;
-            line-height: 1.1;
-        }
-
-        /* Subtitle (Centered Below the Title) */
-        .subtitle {
-            font-family: 'Inter', sans-serif;
-            font-size: 18px;
-            font-weight: bold;
-            color: black;
-            text-transform: uppercase;
-            max-width: 600px; /* Prevents it from being too wide */
-            line-height: 1.3;
-            text-align: center; /* Ensures subtitle stays centered */
-            margin: 0 auto 60px; /* Centers it on the page */
-            display: block; /* Ensures it takes its own line */
-            margin-top: -50px;
-
-        }
-
-
-
-        .key-banner{
-            width: 70%;
-            max-width: 700px;
-            margin: -20px 0;
-        }
-
-        /* Layout - Three-column Flexbox */
-        .stage-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0px; /* Space between columns */
-            max-width: 1100px;
-            margin: -100px auto;
-        }
-
-        .controls-left,
-        .controls-right {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 140px;
-        }
-
-        .stage-container {
-            position: relative;
-            width: 950px;
-            height: 1000px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 0px;
-
-        }
-
-        /* Stage and Overlapping Elements */
-        .stage-background {
-            width: 100%;
-            position: absolute;
-            z-index: 1;
-        }
-
-        .stage-overlay {
-            position: absolute;
-            width: 100%;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        #backdrop { z-index: 2; }
-        #props { z-index: 3; }
-        #lighting { z-index: 4; }
-
-        /* Arrows */
-        .arrow-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-        }
-
-        .arrow-btn img {
-            width: 100%;
-            height: auto;
-        }
-
-        .navigation-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            position: relative; /* Ensure positioning context */
-            z-index: 10; /* Higher than overlays */
-        }
-
-        .back-button, .next-button {
-            padding: 16px 40px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 60px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 40px; /* Ensures proper vertical centering */
-            margin-top: 30px;
-            margin-bottom: 50px;
-        }
-
-        .back-button {
-            background: transparent;
-            color: #BC2025;
-            border: 4px solid #BC2025;
-        }
-
-        .next-button {
-            background: #BC2025;
-            color: white;
-            border: none;
-        }
-        
-        /* Hover Effect - Change to Black */
-        .back-button:hover {
-            background: transparent;
-            color: black;
-            border: 4px solid black; /* Changes outline to black */
-        }
-
-        .next-button:hover {
-            background: black;
-            color: white;
-        }
-
-    </style>
+    <link rel="stylesheet" href="Style the Satge.css">
 </head>
 <body>
     <header>
         <nav>
             <a href="Landing Page/Landing Page.html" class="nav-item" aria-label="Go to Home page">HOME</a>
-            <img src = "Images/logo.png" alt = "CTRL: The Experience logo" class="logo">
+            <img src="Images/logo.png" alt="CTRL: The Experience logo" class="logo">
             <a href="Pick Artist.html" class="nav-item" aria-label="Go to Artists page">ARTISTS</a>
         </nav>
-</header>
+    </header>
 
-<main>
-    <div class="title-container">
-        <img src="Images/square.png" alt="Triangle" class="title-icon">
-         <h1 class="title">STYLE THE Stage</h1>
-    </div>
-    <h2 class="subtitle">Customize the stage by selecting lighting effects, backdrops, and decor elements</h2>
-    
-    <div>
-        <img src="./Images/Stage Page/Key Stage.png" alt="Key" class="key-banner">
-    </div>
-        <!-- Three-Column Layout -->
+    <main>
+        <div class="title-container">
+            <img src="Images/square.png" alt="Triangle" class="title-icon">
+            <h1 class="title">STYLE THE Stage</h1>
+        </div>
+        <h2 class="subtitle">Customize the stage by selecting lighting effects, backdrops, and decor elements</h2>
+
+        <div>
+            <img src="./Images/Stage Page/Key Stage.png" alt="Key" class="key-banner">
+        </div>
+
         <div class="stage-wrapper">
-            
-            <!-- Left Arrows -->
             <div class="controls-left">
                 <button class="arrow-btn" id="prev-lighting"><img src="./Images/Stage Page/RED left.png" alt="Left"></button>
                 <button class="arrow-btn" id="prev-backdrop"><img src="./Images/Stage Page/BLUE left.png" alt="Left"></button>
                 <button class="arrow-btn" id="prev-props"><img src="./Images/Stage Page/GREEN left.png" alt="Left"></button>
             </div>
 
-            <!-- Stage Center -->
             <div class="stage-container">
                 <img src="./Images/Stage Page/STAGE.png" alt="Stage" class="stage-background">
                 <img id="backdrop" src="./Images/Stage Page/BACKDROP 1.png" alt="Backdrop" class="stage-overlay">
@@ -253,71 +40,19 @@
                 <img id="lighting" src="./Images/Stage Page/LIGHTING 1.png" alt="Lighting" class="stage-overlay">
             </div>
 
-            <!-- Right Arrows -->
             <div class="controls-right">
                 <button class="arrow-btn" id="next-lighting"><img src="./Images/Stage Page/RED right.png" alt="Right"></button>
                 <button class="arrow-btn" id="next-backdrop"><img src="./Images/Stage Page/BLUE right.png" alt="Right"></button>
                 <button class="arrow-btn" id="next-props"><img src="./Images/Stage Page/GREEN right.png" alt="Right"></button>
             </div>
-
         </div>
 
         <div class="navigation-buttons">
             <a href="Pick the Perfect Fit.html" class="back-button">BACK</a>
             <a href="Your show is ready.html" class="next-button">NEXT STEP</a>  
         </div>
-        
-        
-
     </main>
 
-    <script>
-        const backdropImages = ["Images/Stage Page/BACKDROP 1.png", "Images/Stage Page/Backdrop 2.png", "Images/Stage Page/Backdrop 3.png"];
-        const propsImages = ["Images/Stage Page/PROPS 1.png", "Images/Stage Page/PROPS 2.png", "Images/Stage Page/PROPS 3.png"];
-        const lightingImages = ["Images/Stage Page/LIGHTING 1.png", "Images/Stage Page/LIGHTING 2.png", "Images/Stage Page/LIGHTING 3.png"];
-
-        let backdropIndex = 0, propsIndex = 0, lightingIndex = 0;
-
-        function changeImage(index, images, elementId) {
-            let imgElement = document.getElementById(elementId);
-            imgElement.style.opacity = 0;
-            setTimeout(() => {
-                imgElement.src = images[index];
-                imgElement.style.opacity = 1;
-            }, 300);
-        }
-
-        document.getElementById("prev-backdrop").addEventListener("click", () => {
-            backdropIndex = (backdropIndex - 1 + backdropImages.length) % backdropImages.length;
-            changeImage(backdropIndex, backdropImages, "backdrop");
-        });
-
-        document.getElementById("next-backdrop").addEventListener("click", () => {
-            backdropIndex = (backdropIndex + 1) % backdropImages.length;
-            changeImage(backdropIndex, backdropImages, "backdrop");
-        });
-
-        document.getElementById("prev-props").addEventListener("click", () => {
-            propsIndex = (propsIndex - 1 + propsImages.length) % propsImages.length;
-            changeImage(propsIndex, propsImages, "props");
-        });
-
-        document.getElementById("next-props").addEventListener("click", () => {
-            propsIndex = (propsIndex + 1) % propsImages.length;
-            changeImage(propsIndex, propsImages, "props");
-        });
-
-        document.getElementById("prev-lighting").addEventListener("click", () => {
-            lightingIndex = (lightingIndex - 1 + lightingImages.length) % lightingImages.length;
-            changeImage(lightingIndex, lightingImages, "lighting");
-        });
-
-        document.getElementById("next-lighting").addEventListener("click", () => {
-            lightingIndex = (lightingIndex + 1) % lightingImages.length;
-            changeImage(lightingIndex, lightingImages, "lighting");
-        });
-
-    </script>
-
+    <script src="Style the Stage.js"></script>
 </body>
 </html>

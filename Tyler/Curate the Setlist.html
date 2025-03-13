@@ -6,20 +6,23 @@
     <title>Curate the Setlist</title>
     <link rel="stylesheet" href="Curate the Setlist.css">
 </head>
-
 <body>
     
     <header>
         <nav>
-            <a href="Landing Page/Landing Page.html" class="nav-item" aria-label="Go to Home page">HOME</a>
-            <img src = "Images/logo.png" alt = "CTRL: The Experience logo" class="logo">
-            <a href="Pick Artist.html" class="nav-item" aria-label="Go to Artists page">ARTISTS</a>
+            <a href="Landing Page/Landing Page.html" class="nav-item">HOME</a>
+            <img src="Images/logo.png" alt="CTRL: The Experience logo" class="logo">
+            <a href="Pick Artist.html" class="nav-item">ARTISTS</a>
         </nav>
     </header>
 
-    <main class="setlist-container">
-        <img src="./Images/Setlist Page/Title Setlist.png" alt="Curate the Setlist" class="title-image">
-
+    <main>
+        <div class="title-container">
+            <img src="Images/Setlist Page/Triangle.png" alt="Triangle" class="title-icon">
+            <h1 class="title">Curate The Setlist</h1>
+        </div>
+        <h2 class="subtitle">Navigate through the artist's discography, flip albums to view tracklists, and type out your perfect setlist</h2>
+        
         <div class="album-section">
             <button class="nav-arrow left" onclick="prevAlbum()">&#9664;</button>
 
@@ -39,13 +42,8 @@
             <button class="nav-arrow right" onclick="nextAlbum()">&#9654;</button>
         </div>
 
-        <div class="setlist-box" id="setlist-box">
-            <p id="setlist-placeholder" class="setlist-placeholder">Your setlist will appear here...</p>
-        </div>
-
-        <div class="input-section">
-            <input type="text" id="songInput" placeholder="TYPE SONGS..." oninput="hidePlaceholder()">
-            <button class="add-song" onclick="addSong()">ADD SONG</button>
+        <div class="setlist-box" id="setlist-box" contenteditable="true">
+            <p id="setlist-placeholder" class="setlist-placeholder">TYPE YOUR SETLIST HERE...</p>
         </div>
 
         <div class="navigation-buttons">
@@ -55,6 +53,5 @@
     </main>
 
     <script src="Curate the Setlist.js"></script>
-
 </body>
 </html>

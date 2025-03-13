@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick the Perfect Fit</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+         /* Import Custom Font */
+         @font-face {
+            font-family: 'AnzaHeader';
+            src: url('Fonts/Anza-header.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFDF05;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: black;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 60px;
+        }
+
+        .logo {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Title & Key Images */
+        
+     /* Title Section (Triangle + Title in a Row) */
+     .title-container {
+            display: flex; /* Keeps triangle and title in a row */
+            align-items: center;
+            justify-content: center;
+            gap: 50px; /* Spacing between triangle and title */
+            margin: 50px auto 20px; /* Adjusted margin for spacing */
+        }
+
+        /* Triangle Icon */
+        .title-icon {
+            width: 50px; /* Adjust size if needed */
+            height: auto;
+        }
+
+        /* Main Title */
+        .title {
+            font-family: 'AnzaHeader', sans-serif;
+            font-size: 80px;
+            font-weight: normal;
+            color: #BC2025;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            line-height: 1.1;
+        }
+
+        /* Subtitle (Centered Below the Title) */
+        .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+            text-transform: uppercase;
+            max-width: 600px; /* Prevents it from being too wide */
+            line-height: 1.3;
+            text-align: center; /* Ensures subtitle stays centered */
+            margin: 0 auto 60px; /* Centers it on the page */
+            display: block; /* Ensures it takes its own line */
+            margin-top: -50px;
+        }
+
+
+        .key-banner{
+            width: 70%;
+            max-width: 700px;
+            margin: 0px 0;
+        }
+
+        /* Fit Customization Section */
+        .fit-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 20px;
+            margin-top: 50px;
+        }
+
+        .fit-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px 0;
+            position: relative;
+        }
+
+        .arrow {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 40px;
+            margin: 0 20px;
+        }
+
+        .red { color: #BC2025; }
+        .blue { color: #3A99E6; }
+        .green { color: #00943A; }
+        .purple { color: #9E27B5; }
+
+        .fit-image {
+            height: auto;
+            transition: opacity 0.3s ease-in-out;
+            width: 210px; /* Increases each image size */
+        }
+
+   /* Navigation Buttons */
+   .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .back-button, .next-button {
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 60px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px; /* Ensures proper vertical centering */
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+
+        .back-button {
+            background: transparent;
+            color: #BC2025;
+            border: 4px solid #BC2025;
+        }
+
+        .next-button {
+            background: #BC2025;
+            color: white;
+            border: none;
+        }
+        
+        /* Hover Effect - Change to Black */
+        .back-button:hover {
+            background: transparent;
+            color: black;
+            border: 4px solid black; /* Changes outline to black */
+        }
+
+        .next-button:hover {
+            background: black;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="Landing Page/Landing Page.html" class="nav-item" aria-label="Go to Home page">HOME</a>
+            <img src = "Images/logo.png" alt = "CTRL: The Experience logo" class="logo">
+            <a href="Pick Artist.html" class="nav-item" aria-label="Go to Artists page">ARTISTS</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="title-container">
+            <img src="Images/Circle.png" alt="Triangle" class="title-icon">
+             <h1 class="title">Pick the Perfect Fit</h1>
+        </div>
+        <h2 class="subtitle">Mix and match different pieces to create a signature look that fits the performance</h2>
+        
+        <div>
+            <img src="./Images/Fits Page/Key.png" alt="Key" class="key-banner">
+        </div>
+            
+            <div class="container">
+                <div class="fit-container">
+                    <!-- Headwear -->
+                    <div class="fit-item">
+                        <button class="arrow red" onclick="changeItem('headwear', -1)">◀</button>
+                        <img id="headwear" class="fit-image" src="Images/Fits Page/Hats 1.png" alt="Headwear">
+                        <button class="arrow red" onclick="changeItem('headwear', 1)">▶</button>
+                    </div>
+        
+                    <!-- Tops -->
+                    <div class="fit-item">
+                        <button class="arrow blue" onclick="changeItem('tops', -1)">◀</button>
+                        <img id="tops" class="fit-image" src="Images/Fits Page/Tops 1.png" alt="Tops">
+                        <button class="arrow blue" onclick="changeItem('tops', 1)">▶</button>
+                    </div>
+        
+                    <!-- Trousers -->
+                    <div class="fit-item">
+                        <button class="arrow green" onclick="changeItem('trousers', -1)">◀</button>
+                        <img id="trousers" class="fit-image" src="Images/Fits Page/Bottoms 1.png" alt="Trousers">
+                        <button class="arrow green" onclick="changeItem('trousers', 1)">▶</button>
+                    </div>
+        
+                    <!-- Shoes -->
+                    <div class="fit-item">
+                        <button class="arrow purple" onclick="changeItem('shoes', -1)">◀</button>
+                        <img id="shoes" class="fit-image" src="Images/Fits Page/Shoes 1.png" alt="Shoes">
+                        <button class="arrow purple" onclick="changeItem('shoes', 1)">▶</button>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="Curate the Setlist.html" class="back-button">BACK</a>
+                <a href="Style the Stage.html" class="next-button">NEXT STEP</a>  
+            </div>
+    </main>
+
+    <script>
+  let outfit = {
+            headwear: ["Images/Fits Page/Hats 1.png", "Images/Fits Page/Hats 2.png", "Images/Fits Page/Hats 3.png"],
+            tops: ["Images/Fits Page/Tops 1.png", "Images/Fits Page/Tops 2.png", "Images/Fits Page/Tops 3.png"],
+            trousers: ["Images/Fits Page/Bottoms 1.png", "Images/Fits Page/Bottoms 2.png", "Images/Fits Page/Bottoms 3.png"],
+            shoes: ["Images/Fits Page/Shoes 1.png", "Images/Fits Page/Shoes 2.png", "Images/Fits Page/Shoes 3.png"]
+        };
+
+        let index = {
+            headwear: 0,
+            tops: 0,
+            trousers: 0,
+            shoes: 0
+        };
+
+        function changeItem(type, direction) {
+            let imgElement = document.getElementById(type);
+            
+            // Fade out before changing the image
+            imgElement.style.opacity = 0;
+            
+            setTimeout(() => {
+                index[type] += direction;
+                if (index[type] < 0) {
+                    index[type] = outfit[type].length - 1;
+                } else if (index[type] >= outfit[type].length) {
+                    index[type] = 0;
+                }
+                imgElement.src = outfit[type][index[type]];
+
+                // Fade back in
+                imgElement.style.opacity = 1;
+            }, 300); // Wait 300ms before changing the image
+        }
+    </script>
+
+</body>
+</html>

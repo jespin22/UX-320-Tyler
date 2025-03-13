@@ -1,10 +1,3 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* Import Custom Font */
@@ -15,17 +8,14 @@
     font-style: normal;
 }
 
-/* Body Styling */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #FFDF05;
-    color: #BC2025;
+    background: #FFDF05;
     text-align: center;
-    padding-top: 60px;
-    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header */
 header {
     background-color: black;
     padding: 15px 20px;
@@ -58,7 +48,7 @@ nav {
     height: 30px;
 }
 
-/* Title Section */
+/* Title & Key Images */
 .title-container {
     display: flex;
     align-items: center;
@@ -93,113 +83,51 @@ nav {
     text-align: center;
     margin: 0 auto 60px;
     display: block;
+    margin-top: -50px;
 }
 
-/* Album Navigation */
-.album-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
+.key-banner {
+    width: 70%;
+    max-width: 700px;
+    margin: 0px 0;
 }
 
-.nav-arrow {
-    background: none;
-    border: none;
-    font-size: 32px;
-    font-weight: bold;
-    cursor: pointer;
-    color: black;
-    transition: color 0.3s;
-}
-
-.nav-arrow:hover {
-    color: #BC2025;
-}
-
-.album-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.album-side {
-    width: 150px;
-    height: 150px;
-    opacity: 0.4;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.album-card.center {
-    width: 250px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease-in-out;
-    cursor: pointer;
-    border-radius: 15px;
-}
-
-.album-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.flipped {
-    transform: rotateY(180deg);
-}
-
-.album-card .album-front,
-.album-card .album-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-}
-
-.album-card .album-back {
-    transform: rotateY(180deg);
-}
-
-/* Setlist Box */
-.setlist-box {
-    width: 85%;
-    max-width: 500px;
-    background: #E6E6E6;
-    padding: 40px 30px;
-    margin: 30px auto;
-    border-radius: 15px;
-    min-height: 200px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 500;
-    color: black;
-    cursor: text;
-    outline: none;
+/* Fit Customization Section */
+.fit-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-transform: uppercase;
-    white-space: pre-line;
-    line-height: 1.6;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.fit-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
     position: relative;
 }
 
-.setlist-placeholder {
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: black;
-    font-weight: 500;
-    pointer-events: none;
+.arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 40px;
+    margin: 0 20px;
+}
+
+.red { color: #BC2025; }
+.blue { color: #3A99E6; }
+.green { color: #00943A; }
+.purple { color: #9E27B5; }
+
+.fit-image {
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+    width: 210px;
 }
 
 /* Navigation Buttons */
@@ -219,7 +147,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70px;
+    height: 40px;
     margin-top: 30px;
     margin-bottom: 50px;
 }
