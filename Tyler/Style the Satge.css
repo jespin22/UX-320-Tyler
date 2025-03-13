@@ -1,3 +1,4 @@
+/* ==================== IMPORT CUSTOM FONTS ==================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @font-face {
@@ -6,7 +7,14 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'DelRay';
+    src: url('../Fonts/DelRay-subtitle.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
+/* ==================== BACKGROUND ==================== */
 body {
     font-family: 'Inter', sans-serif;
     background: #FFDF05;
@@ -15,8 +23,9 @@ body {
     padding: 0;
 }
 
+/* ==================== NAVIGATION ==================== */
 header {
-    background-color: black;
+    background-color: #101010;
     padding: 15px 20px;
     position: fixed;
     top: 0;
@@ -24,30 +33,34 @@ header {
     width: 100%;
     z-index: 1000;
 }
-
+/* Spacing */
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
-
+/* Font */
 .nav-item {
     color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
+    margin: 0 20px; /* Spacing between items */
     margin-right: 60px;
+    font-family: 'DelRay', sans-serif;
 }
-
 .logo {
-    width: 30px;
+    width: 30px; 
     height: 30px;
 }
+.nav-item:hover {
+    color: #E63A3F;
+}
 
-/* Title Section */
+/* ==================== TITLE & SUBTITLE ==================== */
 .title-container {
     display: flex;
     align-items: center;
@@ -55,12 +68,10 @@ nav {
     gap: 50px;
     margin: 50px auto 20px;
 }
-
 .title-icon {
     width: 50px;
     height: auto;
 }
-
 .title {
     font-family: 'AnzaHeader', sans-serif;
     font-size: 80px;
@@ -70,11 +81,10 @@ nav {
     letter-spacing: 10px;
     line-height: 1.1;
 }
-
 .subtitle {
     font-size: 18px;
     font-weight: bold;
-    color: black;
+    color: #101010;
     text-transform: uppercase;
     max-width: 600px;
     line-height: 1.3;
@@ -82,12 +92,14 @@ nav {
     margin: -50px auto 60px;
 }
 
+/* ==================== KEY ==================== */
 .key-banner {
     width: 70%;
     max-width: 700px;
     margin: -20px 0;
 }
 
+/* ==================== CUSTOMIZE STAGE ==================== */
 .stage-wrapper {
     display: flex;
     justify-content: center;
@@ -95,13 +107,11 @@ nav {
     max-width: 1100px;
     margin: -100px auto;
 }
-
 .controls-left, .controls-right {
     display: flex;
     flex-direction: column;
     gap: 140px;
 }
-
 .stage-container {
     position: relative;
     width: 950px;
@@ -110,13 +120,11 @@ nav {
     justify-content: center;
     align-items: center;
 }
-
 .stage-background {
     width: 100%;
     position: absolute;
     z-index: 1;
 }
-
 .stage-overlay {
     position: absolute;
     width: 100%;
@@ -134,19 +142,18 @@ nav {
     width: 40px;
     height: 40px;
 }
-
 .arrow-btn img {
     width: 100%;
     height: auto;
 }
 
+/* ==================== BACK AND NEXT BUTTON ==================== */
 .navigation-buttons {
     display: flex;
     justify-content: center;
     gap: 50px;
     margin-top: 30px;
 }
-
 .back-button, .next-button {
     padding: 16px 40px;
     font-size: 18px;
@@ -161,27 +168,23 @@ nav {
     margin-top: 30px;
     margin-bottom: 50px;
 }
-
 .back-button {
     background: transparent;
     color: #BC2025;
     border: 4px solid #BC2025;
 }
-
 .next-button {
     background: #BC2025;
     color: white;
     border: none;
 }
-
 /* Hover Effect - Change to Black */
 .back-button:hover {
     background: transparent;
-    color: black;
-    border: 4px solid black; /* Changes outline to black */
+    color: #101010;
+    border: 4px solid #101010; /* Changes outline to black */
 }
-
 .next-button:hover {
-    background: black;
+    background: #101010;
     color: white;
 }

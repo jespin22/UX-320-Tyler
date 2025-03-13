@@ -4,54 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curate the Setlist</title>
+
+    <!-- Style sheet and font -->
     <link rel="stylesheet" href="Curate the Setlist.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
     <header>
+        <!-- Navigation bar -->
         <nav>
-            <a href="Landing Page/Landing Page.html" class="nav-item">HOME</a>
+            <a href="Landing Page/Landing Page.html" class="nav-item" aria-label="Go to Home page">HOME</a>
             <img src="Images/logo.png" alt="CTRL: The Experience logo" class="logo">
-            <a href="Pick Artist.html" class="nav-item">ARTISTS</a>
+            <a href="Pick Artist.html" class="nav-item" aria-label="Go to Artists page">ARTISTS</a>
         </nav>
     </header>
 
     <main>
+        <!-- Title & Icon -->
         <div class="title-container">
             <img src="Images/Setlist Page/Triangle.png" alt="Triangle" class="title-icon">
             <h1 class="title">Curate The Setlist</h1>
         </div>
+
+        <!-- Subtitle -->
         <h2 class="subtitle">Navigate through the artist's discography, flip albums to view tracklists, and type out your perfect setlist</h2>
         
+        <!-- Album Section -->
         <div class="album-section">
+            <!-- Previous album button -->
             <button class="nav-arrow left" onclick="prevAlbum()">&#9664;</button>
-
+            
             <div class="album-container">
+                <!-- Left album -->
                 <img class="album-side" id="leftAlbum">
+                <!-- Center album & click to flip -->
                 <div class="album-card center" id="mainAlbumCard" onclick="flipCard()">
                     <div class="album-front">
+                        <!-- Center album image -->
                         <img id="mainAlbum">
                     </div>
                     <div class="album-back">
+                        <!-- Album tracklist -->
                         <img id="mainSongs">
                     </div>
                 </div>
+                <!-- Right album -->
                 <img class="album-side" id="rightAlbum">
             </div>
-
+            <!-- Next album button -->
             <button class="nav-arrow right" onclick="nextAlbum()">&#9654;</button>
         </div>
 
+        <!--Type setlist -->
         <div class="setlist-box" id="setlist-box" contenteditable="true">
             <p id="setlist-placeholder" class="setlist-placeholder">TYPE YOUR SETLIST HERE...</p>
         </div>
-
+        <!-- Back and forward buttons -->
         <div class="navigation-buttons">
             <a href="Tyler Main Page.html" class="back-button">BACK</a>
             <a href="Pick the Perfect Fit.html" class="next-button">NEXT STEP</a>  
         </div>
     </main>
-
+    
+    <!-- Referencing javascript file -->
     <script src="Curate the Setlist.js"></script>
 </body>
 </html>

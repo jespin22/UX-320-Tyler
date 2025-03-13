@@ -1,4 +1,4 @@
-/* Import custom font */
+/* ==================== IMPORT CUSTOM FONT ==================== */
 @font-face {
     font-family: 'AnzaHeader';
     src: url('Fonts/Anza-header.otf') format('opentype');
@@ -13,47 +13,16 @@
     font-style: normal;
 }
 
-/* Apply Inter to the whole page */
-body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffdf05;
-    color: #bc2025;
-    text-align: center;
-    padding-top: 60px; /* Prevents content from being hidden behind header */
-    padding-bottom: 100px; /* Adds space at the bottom of the page */
-    overflow-x: hidden;
-}
 
-/* Apply Custom Font to the Title */
-.title {
-    font-family: 'AnzaHeader', sans-serif;
-    font-size: 100px; /* Adjusted font size */
-    font-weight: normal; /* Removed bold */
-    color: #FFDF05;
-    text-transform: uppercase;
-    letter-spacing: 10px; /* Increased letter-spacing */
-    line-height: 1.1; /* Added line-height to prevent squishing */
-    padding-top: 100px; /* Added padding to provide space between nav and title */
-}
 
-.subtitle {
-    font-family: 'DelRay', sans-serif;
-    font-size: 50px; /* Adjusted font size */
-    font-weight: normal; /* Removed bold */
-    color: #ffffff;
-    text-transform: uppercase;
-    line-height: 1.1; /* Added line-height to prevent squishing */
-}
-
-/* Global Reset */
+/* ==================== RESET ==================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ==================== BACKGROUND ==================== */
 body {
     font-family: 'Inter', sans-serif;
     background: #101010;
@@ -93,24 +62,36 @@ nav {
     margin-right: 60px;
     font-family: 'DelRay', sans-serif;
 }
-/* Logo */
 .logo {
     width: 30px; 
     height: 30px;
 }
-/* Hover color */
 .nav-item:hover {
     color: #E63A3F;
 }
 
-/* Main Section */
+/* ==================== TITLE & SUBTITLE ==================== */
+.title {
+    font-family: 'AnzaHeader', sans-serif;
+    font-size: 100px;
+    font-weight: normal;
+    color: #FFDF05;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    line-height: 1.1;
+    padding-top: 100px; /* Added padding to provide space between nav and title */
+}
 .subtitle {
+    font-family: 'DelRay', sans-serif;
+    font-weight: normal; /* Removed bold */
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1.1; /* Added line-height to prevent squishing */
     font-size: 14px;
-    font-weight: 400;
     margin-top: 10px;
 }
 
-/* CAROUSEL WRAPPER */
+/* ==================== CAROUSEL ==================== */
 .carousel-wrapper {
     display: flex;
     justify-content: center;
@@ -121,8 +102,6 @@ nav {
     height: auto;
     overflow: hidden;
 }
-
-/* CAROUSEL */
 .carousel {
     display: flex;
     align-items: center;
@@ -135,12 +114,10 @@ nav {
     width: 100%;
     justify-content: center;
 }
-
 /* Hide scrollbar but allow scrolling */
 .carousel::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome & Safari */
 }
-
 /* ARTIST CARDS */
 .artist-card {
     flex: 0 0 auto;
@@ -153,28 +130,24 @@ nav {
     align-items: center;
     justify-content: center;
 }
-
 /* Artist images */
 .artist-card img {
-    width: 180px; /* Default size */
+    width: 180px;
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
     transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
-
 /* Hover effect - Slight glow to encourage interaction */
 .artist-card:hover {
     opacity: 0.6;
 }
-
 /* ACTIVE ARTIST - Enlarges smoothly and stays at full opacity */
 .artist-card.active {
     opacity: 1 !important;
     transform: scale(1.00);
 }
-
 /* Active artist image enlarges */
 .artist-card.active img {
     width: 210px;
@@ -182,7 +155,7 @@ nav {
     transform: scale(1.00);
 }
 
-/* TEXT UNDER ARTIST */
+/* ==================== ARTIST NAME ==================== */
 .artist-card h2 {
     font-size: 18px;
     font-weight: 700;
@@ -192,7 +165,6 @@ nav {
     opacity: 0.7;
     transition: opacity 0.3s ease-in-out, font-size 0.3s ease-in-out;
 }
-
 /* Active artist text is more prominent */
 .artist-card.active h2 {
     opacity: 1;
@@ -200,7 +172,7 @@ nav {
     margin-top: 20px;
 }
 
-/* RESPONSIVE DESIGN */
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
     .title {
         font-size: 80px; /* Adjust font size for smaller screens */
@@ -229,7 +201,8 @@ main {
     padding-bottom: 50px;
     padding-top: 0px;
 }
-/* Continue button */
+
+/* ==================== BUTTON ==================== */
 .cta {
     background-color: #FE7A2D;
     color: white;
@@ -247,4 +220,3 @@ main {
 .cta:hover {
     background-color: #bc2025;
 }
-

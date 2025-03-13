@@ -1,3 +1,4 @@
+// STORE OUTFIT CATEGORIES AND IMAGES
 let outfit = {
     headwear: ["Images/Fits Page/Hats 1.png", "Images/Fits Page/Hats 2.png", "Images/Fits Page/Hats 3.png"],
     tops: ["Images/Fits Page/Tops 1.png", "Images/Fits Page/Tops 2.png", "Images/Fits Page/Tops 3.png"],
@@ -5,12 +6,14 @@ let outfit = {
     shoes: ["Images/Fits Page/Shoes 1.png", "Images/Fits Page/Shoes 2.png", "Images/Fits Page/Shoes 3.png"]
 };
 
+// Track the current outfit category location
 let index = { headwear: 0, tops: 0, trousers: 0, shoes: 0 };
 
+// Change outfit
 function changeItem(type, direction) {
     let imgElement = document.getElementById(type);
     imgElement.style.opacity = 0;
-    
+    // Transition time
     setTimeout(() => {
         index[type] += direction;
         if (index[type] < 0) index[type] = outfit[type].length - 1;

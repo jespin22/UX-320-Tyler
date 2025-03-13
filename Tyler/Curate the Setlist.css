@@ -1,21 +1,26 @@
-/* General Reset */
+/* ==================== RESET ==================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-/* Import Custom Font */
+/* ==================== IMPORT CUSTOM FONTS ==================== */
 @font-face {
     font-family: 'AnzaHeader';
     src: url('Fonts/Anza-header.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'DelRay';
+    src: url('Fonts/DelRay-subtitle.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* Body Styling */
+/* ==================== BACKGROUND ==================== */
 body {
     font-family: 'Inter', sans-serif;
     background-color: #FFDF05;
@@ -25,9 +30,9 @@ body {
     overflow-x: hidden;
 }
 
-/* Header */
+/* ==================== NAVIGATION ==================== */
 header {
-    background-color: black;
+    background-color: #101010;
     padding: 15px 20px;
     position: fixed;
     top: 0;
@@ -35,30 +40,34 @@ header {
     width: 100%;
     z-index: 1000;
 }
-
+/* Spacing */
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
-
+/* Font */
 .nav-item {
     color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
+    margin: 0 20px; /* Spacing between items */
     margin-right: 60px;
+    font-family: 'DelRay', sans-serif;
 }
-
 .logo {
-    width: 30px;
+    width: 30px; 
     height: 30px;
 }
+.nav-item:hover {
+    color: #E63A3F;
+}
 
-/* Title Section */
+/* ==================== TITLE & SUBTITLE ==================== */
 .title-container {
     display: flex;
     align-items: center;
@@ -66,12 +75,10 @@ nav {
     gap: 50px;
     margin: 50px auto 20px;
 }
-
 .title-icon {
     width: 50px;
     height: auto;
 }
-
 .title {
     font-family: 'AnzaHeader', sans-serif;
     font-size: 80px;
@@ -81,12 +88,11 @@ nav {
     letter-spacing: 10px;
     line-height: 1.1;
 }
-
 .subtitle {
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-weight: bold;
-    color: black;
+    color: #101010;
     text-transform: uppercase;
     max-width: 600px;
     line-height: 1.3;
@@ -95,7 +101,7 @@ nav {
     display: block;
 }
 
-/* Album Navigation */
+/* ==================== ALBUM NAVIGATION ==================== */
 .album-section {
     display: flex;
     align-items: center;
@@ -103,35 +109,30 @@ nav {
     gap: 20px;
     margin: 20px 0;
 }
-
 .nav-arrow {
     background: none;
     border: none;
     font-size: 32px;
     font-weight: bold;
     cursor: pointer;
-    color: black;
+    color: #101010;
     transition: color 0.3s;
 }
-
 .nav-arrow:hover {
     color: #BC2025;
 }
-
 .album-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
-
 .album-side {
     width: 150px;
     height: 150px;
     opacity: 0.4;
     transition: opacity 0.3s ease-in-out;
 }
-
 .album-card.center {
     width: 250px;
     height: 250px;
@@ -143,7 +144,6 @@ nav {
     cursor: pointer;
     border-radius: 15px;
 }
-
 .album-card img {
     width: 100%;
     height: 100%;
@@ -151,11 +151,9 @@ nav {
     border-radius: 15px;
     transition: opacity 0.3s ease-in-out;
 }
-
 .flipped {
     transform: rotateY(180deg);
 }
-
 .album-card .album-front,
 .album-card .album-back {
     position: absolute;
@@ -163,13 +161,11 @@ nav {
     height: 100%;
     backface-visibility: hidden;
 }
-
 .album-card .album-back {
     transform: rotateY(180deg);
 }
 
-/* Setlist Box */
-.setlist-box {
+/* ==================== SETLIST ==================== */.setlist-box {
     width: 85%;
     max-width: 500px;
     background: #E6E6E6;
@@ -180,7 +176,7 @@ nav {
     text-align: center;
     font-size: 18px;
     font-weight: 500;
-    color: black;
+    color: #101010;
     cursor: text;
     outline: none;
     display: flex;
@@ -191,24 +187,22 @@ nav {
     line-height: 1.6;
     position: relative;
 }
-
 .setlist-placeholder {
     position: absolute;
     top: 15px;
     left: 50%;
     transform: translateX(-50%);
-    color: black;
+    color: #101010;
     font-weight: 500;
     pointer-events: none;
 }
 
-/* Navigation Buttons */
+/* ==================== BACK AND NEXT BUTTON ==================== */
 .navigation-buttons {
     display: flex;
     justify-content: center;
     gap: 50px;
 }
-
 .back-button, .next-button {
     padding: 16px 40px;
     font-size: 18px;
@@ -223,26 +217,22 @@ nav {
     margin-top: 30px;
     margin-bottom: 50px;
 }
-
 .back-button {
     background: transparent;
     color: #BC2025;
     border: 4px solid #BC2025;
 }
-
 .next-button {
     background: #BC2025;
     color: white;
     border: none;
 }
-
 .back-button:hover {
     background: transparent;
-    color: black;
-    border: 4px solid black;
+    color: #101010;
+    border: 4px solid #101010;
 }
-
 .next-button:hover {
-    background: black;
+    background: #101010;
     color: white;
 }

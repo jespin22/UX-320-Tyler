@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Style The Stage</title>
+
+    <!-- Style sheet and font -->
     <link rel="stylesheet" href="Style the Satge.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <!-- Navigation bar -->
         <nav>
             <a href="Landing Page/Landing Page.html" class="nav-item" aria-label="Go to Home page">HOME</a>
             <img src="Images/logo.png" alt="CTRL: The Experience logo" class="logo">
@@ -16,43 +20,52 @@
     </header>
 
     <main>
+        <!-- Title & Icon -->
         <div class="title-container">
             <img src="Images/square.png" alt="Triangle" class="title-icon">
             <h1 class="title">STYLE THE Stage</h1>
         </div>
+
+        <!-- Subtitle -->
         <h2 class="subtitle">Customize the stage by selecting lighting effects, backdrops, and decor elements</h2>
 
+        <!-- Key -->
         <div>
             <img src="./Images/Stage Page/Key Stage.png" alt="Key" class="key-banner">
         </div>
 
+        <!-- Stage buttons - left -->
         <div class="stage-wrapper">
             <div class="controls-left">
-                <button class="arrow-btn" id="prev-lighting"><img src="./Images/Stage Page/RED left.png" alt="Left"></button>
-                <button class="arrow-btn" id="prev-backdrop"><img src="./Images/Stage Page/BLUE left.png" alt="Left"></button>
-                <button class="arrow-btn" id="prev-props"><img src="./Images/Stage Page/GREEN left.png" alt="Left"></button>
+                <button class="arrow-btn" id="prev-lighting"><img src="./Images/Stage Page/RED left.png" alt="Red left control"></button>
+                <button class="arrow-btn" id="prev-backdrop"><img src="./Images/Stage Page/BLUE left.png" alt="Blue left control"></button>
+                <button class="arrow-btn" id="prev-props"><img src="./Images/Stage Page/GREEN left.png" alt="Green left control"></button>
             </div>
-
+        
+            <!-- Stage elements -->
             <div class="stage-container">
-                <img src="./Images/Stage Page/STAGE.png" alt="Stage" class="stage-background">
-                <img id="backdrop" src="./Images/Stage Page/BACKDROP 1.png" alt="Backdrop" class="stage-overlay">
-                <img id="props" src="./Images/Stage Page/PROPS 1.png" alt="Props" class="stage-overlay">
-                <img id="lighting" src="./Images/Stage Page/LIGHTING 1.png" alt="Lighting" class="stage-overlay">
+                <img src="./Images/Stage Page/STAGE.png" alt="Image of a stage" class="stage-background">
+                <img id="backdrop" src="./Images/Stage Page/BACKDROP 1.png" alt="Stage backdrop" class="stage-overlay">
+                <img id="props" src="./Images/Stage Page/PROPS 1.png" alt="Stage props" class="stage-overlay">
+                <img id="lighting" src="./Images/Stage Page/LIGHTING 1.png" alt="Stage lighting" class="stage-overlay">
             </div>
-
+        
+            <!-- Stage button - right -->
             <div class="controls-right">
-                <button class="arrow-btn" id="next-lighting"><img src="./Images/Stage Page/RED right.png" alt="Right"></button>
-                <button class="arrow-btn" id="next-backdrop"><img src="./Images/Stage Page/BLUE right.png" alt="Right"></button>
-                <button class="arrow-btn" id="next-props"><img src="./Images/Stage Page/GREEN right.png" alt="Right"></button>
+                <button class="arrow-btn" id="next-lighting"><img src="./Images/Stage Page/RED right.png" alt="Right stage red light"></button>
+                <button class="arrow-btn" id="next-backdrop"><img src="./Images/Stage Page/BLUE right.png" alt="Right stage blue light"></button>
+                <button class="arrow-btn" id="next-props"><img src="./Images/Stage Page/GREEN right.png" alt="Right stage green light"></button>
             </div>
         </div>
 
+        <!-- Back and forward buttons -->
         <div class="navigation-buttons">
             <a href="Pick the Perfect Fit.html" class="back-button">BACK</a>
             <a href="Your show is ready.html" class="next-button">NEXT STEP</a>  
         </div>
     </main>
 
+    <!-- Referencing javascript file -->
     <script src="Style the Stage.js"></script>
 </body>
 </html>

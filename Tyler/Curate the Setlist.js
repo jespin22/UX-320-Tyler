@@ -1,3 +1,4 @@
+/* ==================== TYPE SETLIST ==================== */
 document.addEventListener("DOMContentLoaded", function() {
     updateAlbumDisplay();
 
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+/* ==================== ALBUM COVER & TRACKLIST ==================== */
 let albumIndex = 0;
 const albums = [
     {
@@ -30,7 +32,6 @@ const albums = [
         altCover:"Album covers for Tyler, The Creator's Call Me If You Get Lost",
         altSong:"Album tracklist for Tyler, The Creator's Call Me If You Get Lost"
     },
-
     { 
         cover: "./Images/Setlist Page/Setlist 3 Album = IGOR.png", 
         songs: "./Images/Setlist Page/Setlist 3 Songs = IGOR.png",
@@ -39,11 +40,14 @@ const albums = [
      }
 ];
 
+// Update the display of the current album
 function updateAlbumDisplay() {
+    // Remove the "flipped" class to reset any previous card flip state
     document.getElementById("mainAlbumCard").classList.remove("flipped");
+    // Remove the "flipped" class to reset any previous card flip state
     document.getElementById("mainAlbum").src = albums[albumIndex].cover;
     document.getElementById("mainSongs").src = albums[albumIndex].songs;
-
+    // Remove the "flipped" class to reset any previous card flip state
     document.getElementById("leftAlbum").src = albums[(albumIndex - 1 + albums.length) % albums.length].cover;
     document.getElementById("rightAlbum").src = albums[(albumIndex + 1) % albums.length].cover;
 }
@@ -52,12 +56,10 @@ function prevAlbum() {
     albumIndex = (albumIndex - 1 + albums.length) % albums.length; 
     updateAlbumDisplay(); 
 }
-
 function nextAlbum() { 
     albumIndex = (albumIndex + 1) % albums.length; 
     updateAlbumDisplay(); 
 }
-
 function flipCard() { 
     document.getElementById("mainAlbumCard").classList.toggle("flipped"); 
 }

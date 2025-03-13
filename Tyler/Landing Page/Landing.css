@@ -11,6 +11,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /* ==================== BACKGROUND ==================== */
 body {
     background-color: #101010;
@@ -207,9 +208,4 @@ nav {
 }
 .cta:hover {
     background-color: #bc2025;
-}
-
-/* ==================== KEYBOARD ACCESSIBILITY ==================== */
-a:focus, button:focus {
-    outline: 3px solid #4d90fe;
 }

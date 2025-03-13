@@ -1,3 +1,4 @@
+/* ==================== ARTIST CAROUSEL ==================== */
 const carousel = document.querySelector(".carousel");
 const artistCards = document.querySelectorAll(".artist-card");
 
