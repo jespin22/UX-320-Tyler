@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Show is Ready</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+
+        @font-face {
+            font-family: 'Anza';
+            src: url('fonts/Anza-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFDF05;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+/* ==================== NAVIGATION ==================== */
+header {
+    background-color: #101010;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+/* Spacing */
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Font */
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 20px; /* Spacing between items */
+    margin-right: 60px;
+    font-family: 'DelRay', sans-serif;
+}
+/* Logo */
+.logo {
+    width: 30px; 
+    height: 30px;
+}
+/* Hover color */
+.nav-item:hover {
+    color: #BC2025;
+}
+
+
+        /* Title Section */
+        .title-section {
+            margin-top: 100px;
+        }
+
+        .main-title {
+            font-family: 'Anza', sans-serif;
+            font-size: 55px;
+            color: #BC2025;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: normal; /* Makes sure it's NOT bold */
+        }
+
+        .sub-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            max-width: 600px;
+            margin: 10px auto;
+        }
+
+        /* Poster Image */
+        .poster-container {
+            margin: 40px auto;
+            width: 80%;
+            max-width: 550px;
+        }
+
+        .poster {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .button {
+            background: #BC2025;
+            color: white;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 30px;
+            border: none;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background: black;
+            transform: scale(1.05);
+        }
+
+        .return-home {
+            color: black;
+            border: 5px solid black;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            text-decoration: none;
+            text-transform: uppercase
+        }
+
+        .return-home:hover {
+            background: transparent;
+            color: #BC2025;
+            border: 5px solid #BC2025;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="Landing Page/Landing Page.html" class="nav-item" aria-label="Go to Home page">HOME</a>
+            <img src = "Images/logo.png" alt = "CTRL: The Experience logo" class="logo">
+            <a href="Pick Artist.html" class="nav-item" aria-label="Go to Artists page">ARTISTS</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Title -->
+        <div class="title-section">
+            <h1 class="main-title">Your Show is Ready</h1>
+            <p class="sub-title">
+                Review your setlist, outfit, and stage design. Download or share your final concert experience setup.
+            </p>
+        </div>
+
+        <!-- Poster -->
+        <div class="poster-container">
+            <img src="./Images/POSTER.png" alt="Show Poster" class="poster">
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <a href="./Images/POSTER.png" download="Your_Show_Poster.png" class="download-link">
+                <button class="button">Download</button>
+            </a>
+            
+            <button class="button" onclick="shareLink()">Share</button>
+        </div>
+
+        <!-- Return Home Button -->
+        <a href="Landing Page/Landing Page.html" class="return-home">Return Home</a>
+    </main>
+
+    <script>
+        function shareLink() {
+            navigator.clipboard.writeText(window.location.href);
+            alert("Link copied to clipboard!");
+        }
+    </script>
+
+</body>
+</html>
