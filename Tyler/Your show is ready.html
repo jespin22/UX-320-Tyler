@@ -16,7 +16,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #FFD42D;
+            background: #FFDF05;
             text-align: center;
             margin: 0;
             padding: 0;
@@ -58,7 +58,7 @@ nav {
 }
 /* Hover color */
 .nav-item:hover {
-    color: #E63A3F;
+    color: #BC2025;
 }
 
 
@@ -70,7 +70,7 @@ nav {
         .main-title {
             font-family: 'Anza', sans-serif;
             font-size: 55px;
-            color: red;
+            color: #BC2025;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: normal; /* Makes sure it's NOT bold */
@@ -105,7 +105,7 @@ nav {
         }
 
         .button {
-            background: red;
+            background: #BC2025;
             color: white;
             padding: 16px 40px;
             font-size: 18px;
@@ -114,6 +114,11 @@ nav {
             border-radius: 30px;
             border: none;
             text-transform: uppercase;
+        }
+
+        .button:hover {
+            background: black;
+            transform: scale(1.05);
         }
 
         .return-home {
@@ -128,6 +133,13 @@ nav {
             margin-bottom: 50px;
             text-decoration: none;
             text-transform: uppercase
+        }
+
+        .return-home:hover {
+            background: transparent;
+            color: #BC2025;
+            border: 5px solid #BC2025;
+            transform: scale(1.05);
         }
 
     </style>
@@ -159,7 +171,10 @@ nav {
 
         <!-- Buttons -->
         <div class="button-container">
-            <button class="button" onclick="downloadPDF()">Download</button>
+            <a href="./Images/POSTER.png" download="Your_Show_Poster.png" class="download-link">
+                <button class="button">Download</button>
+            </a>
+            
             <button class="button" onclick="shareLink()">Share</button>
         </div>
 
@@ -168,10 +183,6 @@ nav {
     </main>
 
     <script>
-        function downloadPDF() {
-            window.location.href = "files/show-setup.pdf";
-        }
-
         function shareLink() {
             navigator.clipboard.writeText(window.location.href);
             alert("Link copied to clipboard!");
